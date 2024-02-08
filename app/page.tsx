@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex h-[calc(100%-160px)] flex-col items-center justify-between px-24 w-full">
       <div className="w-full">
-        <TopNews/>
+        <TopNews/>     
       </div>
     </main>
   );

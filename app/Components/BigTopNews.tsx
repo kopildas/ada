@@ -27,11 +27,10 @@ const timeAgo = (timestamp: string): string => {
   return (
     <>
       {data && (
-        <div className="w-full h-[calc(100vh-160px)] flex flex-col bg-red-00">
-          <div>title</div>
+        <div className="w-full h-[calc(100vh-160px)] flex flex-col bg-red-00 -mt-10">
           <div className="w-full h-screen flex">
             <div className="w-1/2 flex items-center justify-center">
-              <div className="relative aspect-video h-[460px] w-[600px] rounded-xl ">
+              <div className="relative aspect-video h-[560px] w-[600px] rounded-xl ">
                 {data.urlToImage && (
                   <Image
                     src={data.urlToImage}
