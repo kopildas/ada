@@ -3,6 +3,7 @@ import { removeDuplicate } from '@/utils'
 import React from 'react'
 import BigTopNews from './BigTopNews'
 import SmallBox_1 from './SmallBox_1'
+import TextMarquee from './TextMarquee'
 
 const TopNews = async () => {
   const fetchingData = async () => {
@@ -19,6 +20,7 @@ const TopNews = async () => {
   console.log(data)
   console.log(singledata)
   return (
+    <>
     <div className='w-full h-[calc(100vh-160px)] flex'>
       <div className='w-[60%]'>
         <div className='flex w-full items-center justify-start mt-10 -ml-5 bg-red-00'>
@@ -37,6 +39,10 @@ const TopNews = async () => {
       {singledata && <SmallBox_1 data={data[4]}/>}
       </div>
     </div>
+
+    <TextMarquee data={data} />
+
+    </>
   )
 }
 

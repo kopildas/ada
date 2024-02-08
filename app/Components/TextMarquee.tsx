@@ -1,25 +1,37 @@
-import React from 'react'
+import { news } from "@/utils/types";
+import React from "react";
 
-const TextMarquee = () => {
+const TextMarquee = ({ data }: { data: news }) => {
+  console.log(data);
   return (
-    <div class="relative flex overflow-x-hidden">
-    <div class="py-12 animate-marquee whitespace-nowrap">
-      <span class="mx-4 text-4xl">Marquee Item 1</span>
-      <span class="mx-4 text-4xl">Marquee Item 2</span>
-      <span class="mx-4 text-4xl">Marquee Item 3</span>
-      <span class="mx-4 text-4xl">Marquee Item 4</span>
-      <span class="mx-4 text-4xl">Marquee Item 5</span>
-    </div>
-  
-    <div class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap">
-      <span class="mx-4 text-4xl">Marquee Item 1</span>
-      <span class="mx-4 text-4xl">Marquee Item 2</span>
-      <span class="mx-4 text-4xl">Marquee Item 3</span>
-      <span class="mx-4 text-4xl">Marquee Item 4</span>
-      <span class="mx-4 text-4xl">Marquee Item 5</span>
-    </div>
-  </div>
-  )
-}
+    <div className="relative flex text-slate-200 overflow-x-hidden bg-gradient-to-r from-slate-800 to-violet-900 rounded-[3.5rem] mb-16">
+      <div className=" flex items-center justify-center text-2xl bg-slate-800 z-20">
+        <p className="bg-slate-200 text-zinc-600 px-5 py-[6px] rounded-[3.5rem] font-bold ml-2">
+          {" "}
+          New:
+        </p>
+      </div>
+      <div className="py-3 animate-marquee whitespace-nowrap z-10 -mx-24">
+        {data &&
+          data.map((item, ind) => (
+            <span key={ind} className="mx-4 text-2xl">
+              {item.title}
+            </span>
+          ))}
+        
+      </div>
 
-export default TextMarquee
+      <div className="absolute top-0 py-3 animate-marquee2 whitespace-nowrap">
+        {data &&
+          data.map((item, ind) => (
+            <span key={ind} className="mx-4 text-2xl">
+              {item.title}
+            </span>
+          ))}
+        
+      </div>
+    </div>
+  );
+};
+
+export default TextMarquee;
