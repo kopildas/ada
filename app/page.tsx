@@ -1,10 +1,10 @@
 import Image from "next/image";
-
+import TopNews from './Components/TopNews'
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        hello world!
+    <main className="flex h-[calc(100%-160px)] flex-col items-center justify-between px-24 w-full">
+      <div className="w-full">
+        <TopNews/>
       </div>
     </main>
   );
