@@ -5,7 +5,7 @@ import BigTopNews from './BigTopNews'
 import SmallBox_1 from './SmallBox_1'
 import { news } from '@/utils/types'
 
-const TopNews = ({ data }: { data: news }) => {
+const TopNews = ({ data }: { data: news[] }) => {
   
   const singledata = data[3]
   console.log(data)
