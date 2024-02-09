@@ -3,19 +3,10 @@ import { removeDuplicate } from '@/utils'
 import React from 'react'
 import BigTopNews from './BigTopNews'
 import SmallBox_1 from './SmallBox_1'
-import TextMarquee from './TextMarquee'
+import { news } from '@/utils/types'
 
-const TopNews = async () => {
-  const fetchingData = async () => {
-    const newsTop = await getNewsTopHeadlines()
-    const filterData = removeDuplicate(newsTop)
-    console.log(newsTop)
-    console.log(filterData)
-   
-    return filterData;
-  }
-
-  const data = await fetchingData()
+const TopNews = ({ data }: { data: news }) => {
+  
   const singledata = data[3]
   console.log(data)
   console.log(singledata)
@@ -40,7 +31,7 @@ const TopNews = async () => {
       </div>
     </div>
 
-    <TextMarquee data={data} />
+    
 
     </>
   )
