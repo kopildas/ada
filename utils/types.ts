@@ -8,6 +8,6 @@ export type news= {
     description:string,
     url:string,
     urlToImage:string,
-    publishAt:string,
+    publishedAt:string,
     content:string,
 }
