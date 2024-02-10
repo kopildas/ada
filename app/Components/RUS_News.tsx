@@ -18,10 +18,10 @@ export const RUS_News = async () => {
   console.log(singledata);
   const sliceData = data.slice(0, 6);
   return (
-    <div className="w-full flex flex-wrap">
+    <div className="w-full flex flex-wrap bg-green-00">
       {sliceData &&
         sliceData.map((item, indx) => (
-          <div key={indx} className="w-1/3">
+          <div key={indx} className="md:w-1/3">
             <BigBox_2 data={item} />
           </div>
         ))}
