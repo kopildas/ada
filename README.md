@@ -34,3 +34,55 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```
+ada
+├─ .gitignore
+├─ api
+│  └─ index.ts
+├─ app
+│  ├─ admin
+│  │  ├─ layout.tsx
+│  │  └─ page.tsx
+│  ├─ api
+│  │  └─ auth
+│  │     └─ [...nextauth]
+│  │        └─ route.ts
+│  ├─ auth.ts
+│  ├─ Components
+│  │  ├─ BigBox_1.tsx
+│  │  ├─ BigBox_2.tsx
+│  │  ├─ BigTopNews.tsx
+│  │  ├─ Header.tsx
+│  │  ├─ LatestNews.tsx
+│  │  ├─ Navbar.tsx
+│  │  ├─ RUS_News.tsx
+│  │  ├─ SmallBox_1.tsx
+│  │  ├─ SmallBox_2.tsx
+│  │  ├─ TextMarquee.tsx
+│  │  └─ TopNews.tsx
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ world
+│     └─ page.tsx
+├─ middleware.ts
+├─ next.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ public
+│  ├─ images
+│  │  └─ ada-logo.png
+│  ├─ next.svg
+│  └─ vercel.svg
+├─ README.md
+├─ tailwind.config.ts
+├─ tsconfig.json
+└─ utils
+   ├─ connectMongo.ts
+   ├─ index.ts
+   └─ types.ts
+
+```
