@@ -1,3 +1,5 @@
+
+
 import Image from "next/image";
 import React from "react";
 import logo from "@/public/images/ada-logo.png";
@@ -13,7 +15,10 @@ import {
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { BsBroadcast } from "react-icons/bs";
 
+import AuthNavContent from "./AuthNavContent";
+
 const Navbar = () => {
+  
   return (
     <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-10">
       <div className="w-auto bg-green-00 h-full flex items-center justify-center gap-">
@@ -105,12 +110,7 @@ const Navbar = () => {
               >
                 Travel
               </Link>
-              <Link
-                className="hover:text-blue-500 transition ease-in-out duration-200"
-                href="/bitcoin"
-              >
-                Bitcoin
-              </Link>
+              <AuthNavContent/>
             </li>
           </ul>
         </div>
