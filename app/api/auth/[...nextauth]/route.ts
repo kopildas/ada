@@ -4,18 +4,10 @@ import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import User from "@/models/User";
-import { Db } from "mongodb";
 import { connectToDatabase } from "@/utils/connectMongo";
+import { Db } from "mongodb";
 
-
-interface AuthOptions {
-  providers: (CredentialsProvider | GithubProvider)[]; // Specify provider types
-  callbacks: {
-    signIn({ user, account }: { user: AuthUser; account: Account }): Promise<boolean>;
-  };
-  // ... other options if needed
-}
-export const authOptions : AuthOptions = {
+export const authOptions: any = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -25,7 +17,7 @@ export const authOptions : AuthOptions = {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials: any): Promise<any | null>  {
+      async authorize(credentials: any): Promise<any | null> {
         const connection = await connectToDatabase();
         if (!connection) {
           // response.status(500).json({ error: 'Failed to connect to database' });
@@ -51,6 +43,7 @@ export const authOptions : AuthOptions = {
             console.log(err)
           throw new Error(err);
         }
+    
       },
     }),
     GithubProvider({
@@ -64,24 +57,24 @@ export const authOptions : AuthOptions = {
       if (account?.provider == "credentials") {
         return true;
       }
-    //   if (account?.provider == "github") {
-    //     await connect();
-    //     try {
-    //       const existingUser = await User.findOne({ email: user.email });
-    //       if (!existingUser) {
-    //         const newUser = new User({
-    //           email: user.email,
-    //         });
+      // if (account?.provider == "github") {
+      //   await connect();
+      //   try {
+      //     const existingUser = await User.findOne({ email: user.email });
+      //     if (!existingUser) {
+      //       const newUser = new User({
+      //         email: user.email,
+      //       });
 
-    //         await newUser.save();
-    //         return true;
-    //       }
-    //       return true;
-    //     } catch (err) {
-    //       console.log("Error saving user", err);
-    //       return false;
-    //     }
-    //   }
+      //       await newUser.save();
+      //       return true;
+      //     }
+      //     return true;
+      //   } catch (err) {
+      //     console.log("Error saving user", err);
+      //     return false;
+      //   }
+      // }
     },
   },
 };
