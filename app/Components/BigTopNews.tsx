@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 const BigTopNews = ({ data }: { data: news }) => {
-  console.log(data);
+  // console.log(data);
 
 // Function to calculate time ago
 const timeAgo = (timestamp: string): string => {

@@ -2,7 +2,7 @@ import { news } from "@/utils/types";
 import React from "react";
 
 const TextMarquee = ({ data }: { data: news[] }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="relative flex text-slate-200 overflow-x-hidden bg-gradient-to-r from-slate-800 to-violet-900 rounded-[3.5rem] mb-16">
       <div className=" flex items-center justify-center text-2xl bg-slate-800 z-20">
