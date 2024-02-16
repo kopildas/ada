@@ -10,15 +10,15 @@ export default async function Home() {
   const fetchingData = async () => {
     const newsTop = await getNewsTopHeadlines();
     const filterData = removeDuplicate(newsTop);
-    console.log(newsTop);
-    console.log(filterData);
+    // console.log(newsTop);
+//     console.log(filterData);
 
     return filterData;
   };
 
   const data = await fetchingData();
   const singledata = data[3];
-  console.log(singledata);
+  // console.log(singledata);
 
   return (
     <main className="flex h-[calc(100%-160px)] flex-col items-center justify-between px-2 md:px-24 w-full">
