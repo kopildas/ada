@@ -7,7 +7,15 @@ import User from "@/models/User";
 import { Db } from "mongodb";
 import { connectToDatabase } from "@/utils/connectMongo";
 
-export const authOptions: any = {
+
+interface AuthOptions {
+  providers: (CredentialsProvider | GithubProvider)[]; // Specify provider types
+  callbacks: {
+    signIn({ user, account }: { user: AuthUser; account: Account }): Promise<boolean>;
+  };
+  // ... other options if needed
+}
+export const authOptions : AuthOptions = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
