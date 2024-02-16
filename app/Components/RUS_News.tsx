@@ -7,15 +7,15 @@ export const RUS_News = async () => {
   const fetchingData = async () => {
     const newsTop = await getRUSNews();
     const filterData = removeDuplicate(newsTop);
-    console.log(newsTop);
-    console.log(filterData);
+    // console.log(newsTop);
+//     console.log(filterData);
 
     return filterData;
   };
 
   const data = await fetchingData();
   const singledata = data[3];
-  console.log(singledata);
+  // console.log(singledata);
   const sliceData = data.slice(0, 6);
   return (
     <div className="w-full flex flex-wrap bg-green-00">

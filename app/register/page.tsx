@@ -60,6 +60,8 @@ const { email, password } = formData;
       //     password,
       //   }),
       // });
+      console.log(formData)
+      const namespace= "pageview";
       const res = await axios.post("/api/register",formData)
 
       if (res.status === 400) {
