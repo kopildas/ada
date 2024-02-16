@@ -34,15 +34,15 @@ const page = async () => {
       // console.log("connected");
       // console.log(results);
       const namespace= "pageview";
-      const formData = {
-        email: namespace,
-          password: `analytics::${namespace}`,
-      }
-      console.log(formData)
-      const res = await axios.post("/api/register",namespace)
+      // const formData = {
+      //   email: namespace,
+      //     password: `analytics::${namespace}`,
+      // }
+      // console.log(formData)
+      // const res = await axios.post("/api/register",namespace)
       // const res = await axios.post("/api/addviewer",namespace)
     // console.log(key)
-    console.log(res)
+    // console.log(res)
       // response.status(200).json(results);
     } catch (error) {
       console.error("world err "+error);
