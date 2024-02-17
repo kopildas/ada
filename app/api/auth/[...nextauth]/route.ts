@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, {NextAuthOptions} from "next-auth";
 import { Account, User as AuthUser } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -7,7 +7,7 @@ import User from "@/models/User";
 import { connectToDatabase } from "@/utils/connectMongo";
 import { Db } from "mongodb";
 
-const authOptions: any = {
+const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -53,7 +53,7 @@ const authOptions: any = {
     // ...add more providers here
   ],
   callbacks: {
-    async signIn({ user, account }: { user: AuthUser; account: Account }) {
+    async signIn({ user, account }: { user: AuthUser; account: Account }): Promise<any | null> {
       if (account?.provider == "credentials") {
         return true;
       }
