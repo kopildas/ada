@@ -70,16 +70,18 @@ export class Analytics {
 
     const fetched = await Promise.all(promises);
 
-    const data = fetched.sort((a, b) => {
-      // if (
-      //   // parse(a.date, 'dd/MM/yyyy', new Date()) >
-      //   // parse(b.date, 'dd/MM/yyyy', new Date())
-      // ) {
-      //   return 1
-      // } else {
-      //   return -1
-      // }
-    });
+    // const data = fetched.sort((a, b) => {
+    //   if (
+    //     parse(a.date, 'dd/MM/yyyy', new Date()) >
+    //     parse(b.date, 'dd/MM/yyyy', new Date())
+    //   ) {
+    //     return 1
+    //   } else {
+    //     return -1
+    //   }
+    // });
+
+    const data:any="";
 
     return data;
   }
