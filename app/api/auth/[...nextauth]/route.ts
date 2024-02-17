@@ -7,7 +7,7 @@ import User from "@/models/User";
 import { connectToDatabase } from "@/utils/connectMongo";
 import { Db } from "mongodb";
 
-export const authOptions: any = {
+const authOptions: any = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -79,5 +79,5 @@ export const authOptions: any = {
   },
 };
 
-export const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST, authOptions };
