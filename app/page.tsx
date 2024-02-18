@@ -1,11 +1,13 @@
 import Image from "next/image";
 import TopNews from "./Components/TopNews";
-import { getNewsTopHeadlines } from "@/api";
+// import { getNewsTopHeadlines } from "../api";
 import { removeDuplicate } from "@/utils";
 import TextMarquee from "./Components/TextMarquee";
 import { LatestNews } from "./Components/LatestNews";
 import BigBox_1 from "./Components/BigBox_1";
 import { RUS_News } from "./Components/RUS_News";
+import { getNewsTopHeadlines } from "./api";
+
 export default async function Home() {
   const fetchingData = async () => {
     const newsTop = await getNewsTopHeadlines();

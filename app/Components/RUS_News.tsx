@@ -1,7 +1,8 @@
-import { getRUSNews } from "@/api";
+// import { getRUSNews } from "@/api";
 import { removeDuplicate } from "@/utils";
 import BigBox_1 from "./BigBox_1";
 import { BigBox_2 } from "./BigBox_2";
+import { getRUSNews } from "../api";
 
 export const RUS_News = async () => {
   const fetchingData = async () => {
