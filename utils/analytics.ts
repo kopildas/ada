@@ -42,13 +42,15 @@ export class Analytics {
       };
       console.log(formData)
 
-      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/addviewer`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });    // console.log(key)
+      // const res = await fetch(`${process.env.NEXTAUTH_URL}/api/addviewer`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
+      const res = await axios.post("/api/addviewer",formData)
+      // console.log(key)
     console.log(res)
 
   } catch (error) {
