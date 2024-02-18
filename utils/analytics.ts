@@ -7,6 +7,7 @@ import { add_view } from "@/lib/mongo";
 import { db_connection, getDate } from ".";
 import { connectToDatabase } from "./connectMongo";
 import axios from "axios";
+import { NextRequest, NextResponse } from 'next/server';
 
 type AnalyticsArgs = {
   retention?: number;
@@ -49,12 +50,17 @@ export class Analytics {
       //   },
       //   body: JSON.stringify(formData),
       // });
-      const res = await axios.post("/api/addviewer",formData)
+      const res:any = await axios.post("/api/addviewer",formData)
       // console.log(key)
     console.log(res)
-
-  } catch (error) {
+    return new NextResponse(res, {
+      status: 200,
+    });
+  } catch (error:any) {
       console.error("err holo "+error);
+      return new NextResponse(error, {
+        status: 502,
+      });
   }
 
         
