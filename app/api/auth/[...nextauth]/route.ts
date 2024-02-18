@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 import User from "@/models/User";
 import { connectToDatabase } from "@/utils/connectMongo";
 import { Db } from "mongodb";
-import { authOptions } from "./option";
+import { authOptions } from "@/utils/option";
 
 
 
