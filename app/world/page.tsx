@@ -1,4 +1,4 @@
-import { getNewsTopHeadlines } from "@/api";
+// import { getNewsTopHeadlines } from "@/api";
 import { connectToDatabase } from "@/utils/connectMongo";
 import axios from "axios";
 import { Db } from "mongodb";
