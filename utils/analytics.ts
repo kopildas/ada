@@ -42,7 +42,7 @@ export class Analytics {
       };
       console.log(formData)
 
-      const res = await fetch('http://localhost:3000/api/addviewer', {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/addviewer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
