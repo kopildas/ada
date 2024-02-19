@@ -6,7 +6,7 @@
 import { add_view } from "@/lib/mongo";
 import { db_connection, getDate } from ".";
 import { connectToDatabase } from "./connectMongo";
-import axios from "axios";
+// import axios from '@/lib/customAxios';
 import { NextRequest, NextResponse } from 'next/server';
 
 type AnalyticsArgs = {
@@ -43,14 +43,14 @@ export class Analytics {
       };
       console.log(formData)
 
-      // const res = await fetch(`${process.env.NEXTAUTH_URL}/api/addviewer`, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
-      const res:any = await axios.post("/api/addviewer",formData)
+      const res = await fetch(`/api/addviewer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      // const res:any = await axios.post("/api/addviewer",formData)
       // console.log(key)
     console.log(res)
     return new NextResponse(res, {

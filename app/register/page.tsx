@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import axios from "axios";
+// import axios from '@/lib/customAxios';
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -50,19 +50,19 @@ const { email, password } = formData;
     }
 
     try {
-      // const res = await fetch("/api/register", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     email,
-      //     password,
-      //   }),
-      // });
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
       console.log(formData)
       const namespace= "pageview";
-      const res = await axios.post("/api/register",formData)
+      // const res = await axios.post("/api/register",formData)
 
       if (res.status === 400) {
         setError("This email is already registered");
