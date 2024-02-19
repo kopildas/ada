@@ -20,19 +20,19 @@ import AuthNavContent from "./AuthNavContent";
 const Navbar = () => {
   
   return (
-    <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-10">
-      <div className="w-auto bg-green-00 h-full flex items-center justify-center gap-">
-        <div className="w-32 md:w-60 h-full bg-rd-300 flex items-center justify-center">
+    <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-">
+      <div className="w-auto bg-green-00 h-full flex items-center justify-center gap- ml-5">
+        <div className="w-32 md:w-36 h-full bg-rd-300 flex items-center justify-center">
           <Image src={logo} alt="ada logo" />
         </div>
         <div className="h-full bg-red-40 hidden  md:flex items-center justify-center px-5 w-auto">
-          <button className="bg-slate-300 px-2 py-2 rounded-3xl text-lg text-blue-500 w-40 flex items-center justify-center">
-          <div className="flex items-center gap-2"> <BsBroadcast className="text-2xl"/> 
+          <button className="bg-slate-300 px-3 py-2 rounded-3xl text-lg text-blue-500 md:w-36 flex items-center justify-center">
+          <div className="flex items-center gap-2"> <BsBroadcast className="text-xl"/> 
            <p className="">Live watch</p>
            </div>
           </button>
         </div>
-        <div className="w-40 h-full bg-ed-200 hidden  md:flex items-center justify-center space-x-3">
+        <div className="w-36 h-full bg-ed-200 hidden  md:flex items-center justify-center space-x-3">
           <Link href="">
             <FaLinkedinIn className="hover:text-blue-500 transition ease-in-out duration-200" />{" "}
           </Link>
@@ -50,10 +50,11 @@ const Navbar = () => {
           </Link>{" "}
         </div>
       </div>
-      <div className="w-full hidden md:block  bg-red-90 h-full">
-        <div className="w-full h-20 bg-red-00 flex items-center justify-end gap-2">
-          <div className="text-5xl"><TiWeatherPartlySunny/></div>
-          <div className="flex flex-col">
+
+      <div className="w-full hidden md:block  bg-red-00 h-full mr-5">
+        <div className="w-full h-20 bg-red-00 flex items-center justify-end gap-2 ">
+          <div className="text-5xl "><TiWeatherPartlySunny/></div>
+          <div className="flex flex-col ">
             <p>Today</p>
             <p className="font-semibold text-xl flex justify-end">9 C</p>
           </div>
@@ -61,7 +62,7 @@ const Navbar = () => {
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
         <div className="w-full h-[79px] bg-reen-300 flex items-center justify-end">
           <ul>
-            <li className="space-x-10 font-semibold text-lg ">
+            <li className="space-x-6 font-semibold text-lg ">
               <Link
                 className="hover:text-blue-500 transition ease-in-out duration-200"
                 href="/world"
