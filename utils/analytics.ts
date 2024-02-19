@@ -43,7 +43,7 @@ export class Analytics {
       };
       console.log(formData)
 
-      const res = await fetch(`/api/addviewer`, {
+      const res:any = await fetch(`/api/addviewer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
