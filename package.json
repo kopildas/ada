@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^4.29.7",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
+    "cross-fetch": "^4.0.0",
     "date-fns": "^3.3.1",
     "http": "^0.0.1-security",
     "mongodb": "^6.3.0",

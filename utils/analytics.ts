@@ -7,6 +7,7 @@ import { add_view } from "@/lib/mongo";
 import { db_connection, getDate } from ".";
 import { connectToDatabase } from "./connectMongo";
 // import axios from '@/lib/customAxios';
+import fetch from 'cross-fetch';
 import { NextRequest, NextResponse } from 'next/server';
 
 type AnalyticsArgs = {
