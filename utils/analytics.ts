@@ -43,7 +43,7 @@ export class Analytics {
       };
       console.log(formData)
 
-      const res:any = await fetch(`/api/addviewer`, {
+      const res:any = await fetch(`${process.env.NEXTAUTH_URL}/api/addviewer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export class Analytics {
       status: 200,
     });
   } catch (error:any) {
-      console.error("err holo "+error);
+      console.error("err holo frm ana"+error);
       return new NextResponse(error, {
         status: 502,
       });
