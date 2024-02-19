@@ -9,7 +9,7 @@ export default async function middleware(req: NextRequest) {
           country: req.geo?.country,
         })
       console.log("tracked hihihi");
-      const link = `${process.env.NEXTAUTH_URL}/api/addviewer`;
+      const link = new URL(`${process.env.NEXTAUTH_URL}/api/addviewer`);
       console.log("Link frm middleware = "+link)
     } catch (err) {
       // fail silently to not affect request

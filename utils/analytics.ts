@@ -7,7 +7,7 @@ import { add_view } from "@/lib/mongo";
 import { db_connection, getDate } from ".";
 import { connectToDatabase } from "./connectMongo";
 // import axios from '@/lib/customAxios';
-import fetch from 'cross-fetch';
+// import fetch from 'cross-fetch';
 import { NextRequest, NextResponse } from 'next/server';
 
 type AnalyticsArgs = {
@@ -42,9 +42,10 @@ export class Analytics {
         namespace: namespace,
         key: key,
       };
-      console.log(formData)
+      // console.log(formData)
+      const link = new URL(`${process.env.NEXTAUTH_URL}/api/addviewer`);
 
-      const res:any = await fetch("/api/addviewer", {
+      const res:any = await fetch(link, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
