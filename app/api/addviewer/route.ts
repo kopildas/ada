@@ -23,9 +23,10 @@ export const POST = async (request: any) => {
     }
     const { database }: { database: Db } = connection;
 
-    const name = key;
+    let name = "analytics::pageview";
 
     const collection2 = database.collection(name as string);
+    name=key
     const existingUser = await collection2.findOne({ name });
 
     if (existingUser) {
@@ -33,7 +34,7 @@ export const POST = async (request: any) => {
         { name: key },
         { $inc: { view: 1, "metrics.orders": 1 } }
       );
-      // console.log("updated entry added")
+      // console.log("collection2 = "+collection2)
       return new NextResponse("addview updated", {
         status: 200,
       });
