@@ -35,6 +35,8 @@ export const POST = async (request: any) => {
         { $inc: { view: 1, "metrics.orders": 1 } }
       );
       // console.log("collection2 = "+collection2)
+      const link = `${process.env.NEXTAUTH_URL}/api/addviewer`;
+      console.log(link)
       return new NextResponse("addview updated", {
         status: 200,
       });
