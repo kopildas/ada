@@ -62,7 +62,7 @@ const Navbar = () => {
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
         <div className="w-full h-[79px] bg-reen-300 flex items-center justify-end">
           <ul>
-            <li className="space-x-6 font-semibold text-lg ">
+            <li className="space-x-6 font-semibold text-base ">
               <Link
                 className="hover:text-blue-500 transition ease-in-out duration-200"
                 href="/world"
