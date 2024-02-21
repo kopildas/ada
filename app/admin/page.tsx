@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import React from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -5,7 +7,6 @@ import { Statistics_Box } from "../Components/Admin/Statistics_Box";
 import { Admin_latest_news } from "../Components/Admin/Admin_latest_news";
 import { View_Bar_Chart } from "../Components/Admin/View_Bar_Chart";
 
-export const dynamic = "force-dynamic";
 
 const page = async () => {
   

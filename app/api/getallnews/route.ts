@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { connectToDatabase } from "@/utils/connectMongo";
 import User from "@/models/User";
 import mongoose from "mongoose";
@@ -5,7 +7,6 @@ import { Db } from "mongodb";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 export const GET = async () => {
 //   const { namespace, key } = await request.json();
