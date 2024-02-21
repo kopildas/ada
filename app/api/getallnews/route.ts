@@ -5,6 +5,8 @@ import { Db } from "mongodb";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export const GET = async () => {
 //   const { namespace, key } = await request.json();
 
@@ -25,7 +27,7 @@ export const GET = async () => {
 
     let all_news: any = await collection2.find().toArray();
     all_news = all_news.reverse();
-    
+
 
     const successResponse:any = { message: "Getting all viewers", data: all_news };
     // console.log("Success response:", JSON.stringify(successResponse)); // Log success response
