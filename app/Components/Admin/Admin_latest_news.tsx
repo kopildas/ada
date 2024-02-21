@@ -6,7 +6,7 @@ export const Admin_latest_news = async () => {
     `${process.env.NEXTAUTH_URL}/api/getallnews`
   );
 
-  const news_response = await fetch(get_all_news_link);
+  const news_response = await fetch(get_all_news_link, {cache: 'no-store'});
 
   if (!news_response.ok) {
     throw new Error("Failed to fetch data");

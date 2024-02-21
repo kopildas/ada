@@ -14,7 +14,7 @@ const page = async () => {
 
   const link = new URL(`${process.env.NEXTAUTH_URL}/api/getallviewer`);
 
-  const response = await fetch(link);
+  const response = await fetch(link, {cache: 'no-store'});
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
