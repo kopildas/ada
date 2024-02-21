@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.7",
+    "@tremor/react": "^3.14.0",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
     "cross-fetch": "^4.0.0",
