@@ -9,7 +9,8 @@ export const Admin_latest_news = async () => {
   const news_response = await fetch(get_all_news_link, {
     next: {
       revalidate:0
-    });
+    }
+  });
 
   if (!news_response.ok) {
     throw new Error("Failed to fetch data");
