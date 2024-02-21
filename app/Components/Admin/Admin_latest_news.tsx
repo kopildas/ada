@@ -65,7 +65,7 @@ export const Admin_latest_news = async () => {
       <p className="font-semibold">Latest News</p>
 
       {all_News_Data &&
-        all_News_Data.data.map((item) => (
+        all_News_Data.data.map((item:any) => (
           <div
             key={item._id}
             className="w-full h-[5rem] bg-zinc-100 mt-5 flex items-center justify-center border rounded-lg py-2 lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60"
