@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 import { connectToDatabase } from "@/utils/connectMongo";
 import User from "@/models/User";
