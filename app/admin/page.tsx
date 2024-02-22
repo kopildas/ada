@@ -6,27 +6,31 @@ import { redirect } from "next/navigation";
 import { Statistics_Box } from "../Components/Admin/Statistics_Box";
 import { Admin_latest_news } from "../Components/Admin/Admin_latest_news";
 import { View_Bar_Chart } from "../Components/Admin/View_Bar_Chart";
+import { unstable_noStore as noStore } from 'next/cache'; 
 
+
+async function getAllViewerData(): Promise<{ responseData: any }> {
+
+  const link = new URL(`${process.env.NEXTAUTH_URL}/api/getallviewer`);
+  const response = await fetch(link);
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  
+  return response.json();
+}
 
 const page = async () => {
-  
+  noStore(); 
+
   const session: any = await getServerSession();
   if (!session || session.user?.email !== "k@gmail.com") {
     // console.log(session.user?.email)
     redirect("/");
   }
 
-  const link = new URL(`${process.env.NEXTAUTH_URL}/api/getallviewer`);
+  const responseData = await getAllViewerData();
 
-  const response = await fetch(link, {
-    next: {
-      revalidate:0
-    }
-  });
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const responseData = await response.json();
   // const responseData = {"totalViews":47,"todayViews":2,"today":"analytics::pageview::20/02/2024","averageView":7.83}
   // console.log(responseData);
 
@@ -43,22 +47,22 @@ const page = async () => {
         <div className="w-full h-[10rem] bg-blue-00 flex items-center justify-center gap-12">
           <Statistics_Box
             logo={"IoPersonOutline"}
-            number={responseData.todayViews}
+            number={responseData?.todayViews}
             title={"Today visitor"}
           />
           <Statistics_Box
             logo={"BsGraphUpArrow"}
-            number={responseData.averageView}
+            number={responseData?.averageView}
             title={"Avg. visitor"}
           />
           <Statistics_Box
             logo={"RiFolderHistoryLine"}
-            number={responseData.totalViews}
+            number={responseData?.totalViews}
             title={"Total visitor"}
           />
           <Statistics_Box
             logo={"BsPostcard"}
-            number={responseData.todayViews}
+            number={responseData?.todayViews}
             title={"Total post"}
           />
         </div>
@@ -69,7 +73,7 @@ const page = async () => {
 
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-[45%]">
-            <View_Bar_Chart data={responseData.data} />
+            {/* <View_Bar_Chart data={responseData?.data} /> */}
           </div>
           <div className="w-[45%]">
             <Admin_latest_news />
