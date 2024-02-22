@@ -47,22 +47,22 @@ const page = async () => {
         <div className="w-full h-[10rem] bg-blue-00 flex items-center justify-center gap-12">
           <Statistics_Box
             logo={"IoPersonOutline"}
-            number={responseData?.todayViews}
+            number={responseData.todayViews}
             title={"Today visitor"}
           />
           <Statistics_Box
             logo={"BsGraphUpArrow"}
-            number={responseData?.averageView}
+            number={responseData.averageView}
             title={"Avg. visitor"}
           />
           <Statistics_Box
             logo={"RiFolderHistoryLine"}
-            number={responseData?.totalViews}
+            number={responseData.totalViews}
             title={"Total visitor"}
           />
           <Statistics_Box
             logo={"BsPostcard"}
-            number={responseData?.todayViews}
+            number={responseData.todayViews}
             title={"Total post"}
           />
         </div>
@@ -73,7 +73,7 @@ const page = async () => {
 
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-[45%]">
-            {/* <View_Bar_Chart data={responseData?.data} /> */}
+            <View_Bar_Chart data={responseData.data} />
           </div>
           <div className="w-[45%]">
             <Admin_latest_news />
