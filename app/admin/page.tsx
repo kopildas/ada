@@ -8,8 +8,23 @@ import { Admin_latest_news } from "../Components/Admin/Admin_latest_news";
 import { View_Bar_Chart } from "../Components/Admin/View_Bar_Chart";
 import { unstable_noStore as noStore } from 'next/cache'; 
 
+interface ViewerData {
+  message?: string;
+  data?: {
+    _id?: string;
+    name?: string;
+    view?: number;
+    metrics?: {
+      orders?: number;
+    };
+  }[];
+  totalViews?: number;
+  todayViews?: number;
+  today?: string;
+  averageView?: number;
+}
 
-async function getAllViewerData(): Promise<{ responseData: any }> {
+async function getAllViewerData(): Promise<ViewerData> {
 
   const link = new URL(`${process.env.NEXTAUTH_URL}/api/getallviewer`);
   const response = await fetch(link);
@@ -17,7 +32,7 @@ async function getAllViewerData(): Promise<{ responseData: any }> {
     throw new Error("Failed to fetch data");
   }
   
-  return response.json();
+  return response.json() as ViewerData;
 }
 
 const page = async () => {
@@ -32,7 +47,7 @@ const page = async () => {
   const responseData = await getAllViewerData();
 
   // const responseData = {"totalViews":47,"todayViews":2,"today":"analytics::pageview::20/02/2024","averageView":7.83}
-  // console.log(responseData);
+  console.log(responseData);
 
  
 
