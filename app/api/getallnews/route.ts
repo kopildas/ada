@@ -8,7 +8,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 
-export const GET = async () => {
+export async function GET(){
 //   const { namespace, key } = await request.json();
 
   try {
