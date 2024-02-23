@@ -9,19 +9,19 @@ import { View_Bar_Chart } from "../Components/Admin/View_Bar_Chart";
 import { unstable_noStore as noStore } from 'next/cache'; 
 
 interface ViewerData {
-  message?: string;
-  data?: {
-    _id?: string;
-    name?: string;
-    view?: number;
-    metrics?: {
-      orders?: number;
+  message: string;
+  data: {
+    _id: string;
+    name: string;
+    view: number;
+    metrics: {
+      orders: number;
     };
   }[];
-  totalViews?: number;
-  todayViews?: number;
-  today?: string;
-  averageView?: number;
+  totalViews: number;
+  todayViews: number;
+  today: string;
+  averageView: number;
 }
 
 async function getAllViewerData(): Promise<ViewerData> {
@@ -60,26 +60,39 @@ const page = async () => {
           <p className="text-xl text-zinc-600">Welcome back</p>
         </div>
         <div className="w-full h-[10rem] bg-blue-00 flex items-center justify-center gap-12">
+          
+          {responseData.todayViews && 
           <Statistics_Box
             logo={"IoPersonOutline"}
             number={responseData.todayViews}
             title={"Today visitor"}
           />
+          }
+
+          {responseData.averageView &&   
           <Statistics_Box
             logo={"BsGraphUpArrow"}
             number={responseData.averageView}
             title={"Avg. visitor"}
           />
+          }
+
+          {
+            responseData.totalViews && 
           <Statistics_Box
             logo={"RiFolderHistoryLine"}
             number={responseData.totalViews}
             title={"Total visitor"}
           />
+          }
+
+          {responseData.todayViews &&
           <Statistics_Box
             logo={"BsPostcard"}
             number={responseData.todayViews}
             title={"Total post"}
-          />
+          />}
+          
         </div>
 
         <div className="w-full h-[1px] px-10">
@@ -88,7 +101,7 @@ const page = async () => {
 
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-[45%]">
-            <View_Bar_Chart data={responseData.data} />
+            {responseData.data && <View_Bar_Chart data={responseData.data} /> }
           </div>
           <div className="w-[45%]">
             <Admin_latest_news />
