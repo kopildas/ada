@@ -25,15 +25,31 @@ interface ViewerData {
 }
 
 async function getAllViewerData(): Promise<ViewerData> {
-
   const link = new URL(`${process.env.NEXTAUTH_URL}/api/getallviewer`);
   const response = await fetch(link);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
-  
-  return response.json() as ViewerData;
+
+  // Assuming response.json() returns a Promise<any>
+  const responseData: any = await response.json();
+
+  // Perform type checking or mapping here
+  if (
+    responseData &&
+    responseData.message &&
+    responseData.data &&
+    responseData.totalViews &&
+    responseData.todayViews &&
+    responseData.today &&
+    responseData.averageView
+  ) {
+    return responseData as ViewerData;
+  } else {
+    throw new Error("Invalid response data format");
+  }
 }
+
 
 const page = async () => {
   noStore(); 
