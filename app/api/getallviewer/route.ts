@@ -1,9 +1,12 @@
+'use server'
+
 import { connectToDatabase } from "@/utils/connectMongo";
 import User from "@/models/User";
 import mongoose from "mongoose";
 import { Db } from "mongodb";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export const GET = async () => {
 //   const { namespace, key } = await request.json();
@@ -49,6 +52,8 @@ export const GET = async () => {
 
 
     const successResponse:any = { message: "Getting all viewers", data: all_viewer, totalViews,todayViews,today,averageView };
+   
+    revalidatePath("/");
     // console.log("Success response:", JSON.stringify(successResponse)); // Log success response
     return new NextResponse(JSON.stringify(successResponse), { status: 200 });
   } catch (err: any) {
