@@ -39,12 +39,14 @@ export const View_Bar_Chart = () => {
     const fetchData = async () => {
       const responseData = await getAllViewerData();
       setRes_data(responseData);
+      console.log("responseData fm clt compo :"+JSON.stringify(responseData) )
     };
-
+console.log("res_data "+res_data)
     fetchData();
   }, []);
   
-  
+  console.log("res_data "+res_data)
+
   let formattedData:any = null
 if(res_data){
   
