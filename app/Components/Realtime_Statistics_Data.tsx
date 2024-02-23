@@ -8,9 +8,9 @@ import { ViewerData } from '@/utils/types';
 
 
 async function getAllViewerData(): Promise<ViewerData> {
-    const nextAuthUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
-    const link = new URL(`${nextAuthUrl}/api/getallviewer`);
-      const response = await fetch(link);
+    // const nextAuthUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+    // const link = new URL(`${nextAuthUrl}/api/getallviewer`);
+    const response = await fetch("/api/getallviewer");
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }

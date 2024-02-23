@@ -6,9 +6,10 @@ import React, { useEffect, useState } from "react";
 
 
 async function getAllViewerData(): Promise<ViewerData> {
-  const nextAuthUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
-  const link = new URL(`${nextAuthUrl}/api/getallviewer`);
-    const response = await fetch(link);
+  // console.log(process.env.NEXTAUTH_URL)
+  // const nextAuthUrl = process.env.NEXTAUTH_URL;
+  // const link = new URL(`${nextAuthUrl}/api/getallviewer`);
+    const response = await fetch("/api/getallviewer");
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
