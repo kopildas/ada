@@ -9,6 +9,8 @@ import { View_Bar_Chart } from "../Components/Admin/View_Bar_Chart";
 import { unstable_noStore as noStore } from "next/cache";
 import { revalidatePath } from "next/cache";
 import { Realtime_Statistics_Data } from "../Components/Realtime_Statistics_Data";
+import Sidebar from "../Components/Admin/Sidebar";
+// import Sidebar from "../Components/Admin/Sidbar";
 
 
 
@@ -28,9 +30,9 @@ const page = async () => {
  
 
   return (
-    <div className="text-zinc-900 w-full flex ">
-      <div className="w-1/6 h-screen bg-zinc-900"></div>
-      <div className="w-5/6 h-screen bg-slate-300 flex flex-col">
+
+      
+      <div className="w-full h-screen bg-slate-300 flex flex-col">
         <div className="w-full h-20 bg-blue-00 px-5 py-5">
           <p className="text-3xl font-semibold">Dashboard</p>
           <p className="text-xl text-zinc-600">Welcome back</p>
@@ -52,7 +54,7 @@ const page = async () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
