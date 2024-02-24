@@ -10,6 +10,7 @@ export type news= {
     urlToImage:string,
     publishedAt:string,
     content:string,
+    category:string,
 }
 
 export type ViewerData ={
