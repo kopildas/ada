@@ -5,14 +5,16 @@ import { Image_Show } from "@/app/Components/Admin/Image_Show";
 import { news } from "@/utils/types";
 import axios from "axios";
 import React, { useState } from "react";
+import { format, subDays } from "date-fns";
+import { Loadder } from "@/app/Components/Loadder";
 
 const initialFormData: news = {
-  author: "",
+  author: "Ada News",
   title: "",
   description: "",
   url: "",
   urlToImage: "",
-  publishedAt: "",
+  publishedAt: format(new Date(), "dd/MM/yyyy"),
   content: "",
   category: "",
 };
@@ -20,6 +22,7 @@ const initialFormData: news = {
 export default function page() {
   let [formData, setFormData] = useState(initialFormData);
   let [isLoadding, setIsLoadding] = useState(false);
+  let [submitLoadding, setSubmitLoadding] = useState(false);
   const {
     author,
     title,
@@ -87,7 +90,47 @@ export default function page() {
 
   async function onSubmit(e: any) {
     e.preventDefault();
+    setSubmitLoadding(true)
+    if (
+      !formData.title ||
+      !formData.description ||
+      !formData.urlToImage ||
+      !formData.content
+    ) {
+      console.log("please give all data");
+    } else {
+      try {
+        const res = await fetch("/api/addnews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        console.log(formData);
+        const namespace = "pageview";
+        // const res = await axios.post("/api/register",formData)
+        setFormData(initialFormData)
+        if (res.status === 400) {
+          // setError("This email is already registered");
+        }
+        if (res.status === 200) {
+          // setError("");
+          // router.push("/login");
+          console.log("ok from add news api");
+        }
+      } catch (error) {
+        // setError("Error, try again");
+        console.log(error);
+      }
+    }
+    setSubmitLoadding(false)
   }
+  if(submitLoadding)return (
+    <>
+    <Loadder/>
+    </>
+  )
 
   return (
     <div className="bg-red-00 h-fit flex flex-col">
@@ -96,12 +139,14 @@ export default function page() {
       </div>
       <div className="mt-10 px-10 w-full flex flex-col bg-red-00 z-10 h-auto md:flex-row">
         {isLoadding ? (
+          <div className="md:w-[35%] bg-green-00">
           <div className="w-80 h-96 bg-zinc-200 rounded-3xl flex flex-col items-center justify-center shadow-2xl text-zinc-700">
             <div className="loadingio-spinner-rolling-hzwlgzevidp">
               <div className="ldio-juih00wo6og">
                 <div></div>
               </div>
             </div>
+          </div>
           </div>
         ) : (
           <div className="md:w-[35%] bg-green-00">
@@ -138,7 +183,7 @@ export default function page() {
                     className="p-2 w-full border border-gray-400 rounded-lg md-5"
                     placeholder=""
                     id="title"
-                    // value={item_name}
+                    value={formData.title}
                     onChange={onChange}
                     required
                   />
@@ -152,7 +197,7 @@ export default function page() {
                     className="p-2 w-full border border-gray-400 rounded-lg md-5"
                     placeholder=""
                     id="description"
-                    // value={item_name}
+                    value={formData.description}
                     onChange={onChange}
                     required
                   />
@@ -169,12 +214,20 @@ export default function page() {
                     className="p-2 w-full border border-gray-400 rounded-lg md-5"
                     placeholder=""
                     id="content"
-                    // value={item_name}
+                    value={formData.content}
                     onChange={onChange}
                     required
                   />
                 </label>
               </div>
+
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+              >
+                {" "}
+                Add new
+              </button>
             </div>
           </form>
         </div>
