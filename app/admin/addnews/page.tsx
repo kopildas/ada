@@ -14,7 +14,7 @@ const initialFormData: news = {
   description: "",
   url: "",
   urlToImage: "",
-  publishedAt: format(new Date(), "dd/MM/yyyy"),
+  publishedAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"), 
   content: "",
   category: "",
 };
