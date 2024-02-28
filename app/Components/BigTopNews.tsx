@@ -44,7 +44,7 @@ const timeAgo = (timestamp: string): string => {
               </div>
             </div>
             <div className="md:w-1/2 p-5 bg-red-0 flex flex-col items-start justify-center md:ml-10 bg-red-00 text-zinc-900">
-              <p className="text-blue-500">{data.source.name}</p>
+              {/* <p className="text-blue-500">{data.source.name}</p> */}
               <p className="text-xl md:text-2xl font-bold mt-4 mb-6">{data.title}</p>
               <p className="text-xl mb-4 text-zinc-500">{data.author}</p>
               <p className="text-sm text-zinc-500">Published {timeAgo(data.publishedAt)}</p>
