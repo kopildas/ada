@@ -18,7 +18,7 @@ export const SmallBox_2 = ({ data }: { data: news }) => {
               </div>
         </div>
         <div className='md:w-3/5 flex flex-col items-start justify-center ml-5 md:ml-0 bg-red-00 text-zinc-900'>
-              <p className="text-blue-500 mt-2 md:mt-0">{data.source.name}</p>
+              {/* <p className="text-blue-500 mt-2 md:mt-0">{data.source.name}</p> */}
               <p className="text-2xl font-bold md:mt-4 md:mb-6">{data.title}</p>
               <p className="text-xl md:mb-4 text-zinc-500">{data.author}</p>
               </div>
