@@ -1,4 +1,5 @@
 export type news= {
+    _id:string,
     source: {
         id:string,
         name:string,
