@@ -21,7 +21,7 @@ export async function GET(){
 
     const { database }: { database: Db } = connection;
 
-    let name = "all";
+    let name = "all_news";
 
     const collection2 = database.collection(name as string);
     // name = key;
