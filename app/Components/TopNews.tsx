@@ -5,7 +5,7 @@ import SmallBox_1 from "./SmallBox_1";
 const TopNews = ({ data }: { data: news[] }) => {
   const singledata = data[1];
   // console.log(data)
-    console.log(singledata)
+    // console.log(singledata)
   return (
     <>
       <div className="w-full h-[calc(100vh-160px)] flex flex-col md:flex-row bg-red-00">
@@ -14,7 +14,7 @@ const TopNews = ({ data }: { data: news[] }) => {
             <p className="w-auto text-2xl md:text-3xl font-bold text-zinc-800">
               Top News
             </p>
-            <div className="md:w-[80%] w-[60%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5"></div>
+            <div className="md:w-[65%] w-[60%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5"></div>
           </div>
           {singledata && <BigTopNews data={singledata} />}
         </div>
