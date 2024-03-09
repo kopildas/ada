@@ -10,7 +10,7 @@ const TopNews = ({ data }: { data: news[] }) => {
     <>
       <div className="w-full h-[calc(100vh-160px)] flex flex-col md:flex-row bg-red-00">
         <div className="md:w-[70%]">
-          <div className="flex w-full items-center justify-start mt-10 mb-10 md:mb-0 md:-ml-5 bg-red-00">
+          <div className="flex w-full items-center justify-start mt-10 mb md:mb-10 lg:-ml-5 bg-red-00">
             <p className="w-auto text-2xl md:text-3xl font-bold text-zinc-800">
               Top News
             </p>
@@ -23,12 +23,12 @@ const TopNews = ({ data }: { data: news[] }) => {
             <p className="w-auto text-2xl md:text-3xl font-bold text-zinc-800">
               Scoop
             </p>
-            <div className="w-[80%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5"></div>
+            <div className="w-[80%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5 "></div>
           </div>
           {singledata && <SmallBox_1 data={data[1]} />}
           {singledata && <SmallBox_1 data={data[1]} />}
           {singledata && <SmallBox_1 data={data[1]} />}
-          {singledata && <SmallBox_1 data={data[1]} />}
+          {singledata && <div className="hidden lg:block"><SmallBox_1 data={data[1]} /></div>}
         </div>
       </div>
     </>
