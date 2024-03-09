@@ -1,6 +1,8 @@
 import { news } from "@/utils/types";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+
 
 function SmallBox_1({ data }: { data: news }) {
   const truncatedTitle = data.title.length > 40 ? data.title.slice(0, 30) + '...' : data.title;
@@ -9,8 +11,9 @@ function SmallBox_1({ data }: { data: news }) {
   const publishedDate = data.publishedAt.slice(0, 10); // Extracts characters from index 0 to 9
 
   return (
-    <div className="w-full flex p-5">
-      <div className="w-2/5">
+    <Link
+    href={`/${data.category}/${data._id}`} className="w-full flex flex-col lg:flex-row p-5 md:ml-6 lg:ml-0 -mt-5 lg:mt-0">
+      <div className="lg:w-2/5">
         <div className="relative aspect-video rounded-xl ">
           {data.urlToImage && (
             <Image
@@ -22,11 +25,11 @@ function SmallBox_1({ data }: { data: news }) {
           )}
         </div>
       </div>
-      <div className="w-3/5 ml-5">
-        <p className="text-lg md:text-2xl font-bold text-zinc-800  md:mb-2">{truncatedTitle}</p>
-        <p className="text-base md:mb-4 text-zinc-500">{publishedDate}</p>
+      <div className="lg:w-3/5 lg:ml-5">
+        <p className="text-lg lg:text-xl font-bold text-zinc-800  md:mb-2">{truncatedTitle}</p>
+        <p className="text-base text-zinc-500">{publishedDate}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
