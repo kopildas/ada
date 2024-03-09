@@ -1,30 +1,32 @@
 // import { getRUSNews } from "@/api";
-import { removeDuplicate } from "@/utils";
+// import { removeDuplicate } from "@/utils";
 import BigBox_1 from "./BigBox_1";
 import { BigBox_2 } from "./BigBox_2";
-import { getRUSNews } from "../api";
+import { getNewsByCategory, getRUSNews } from "../api";
+import Link from "next/link";
+
 
 export const RUS_News = async () => {
   const fetchingData = async () => {
-    const newsTop = await getRUSNews();
-    const filterData = removeDuplicate(newsTop);
+    const newsTop = await getNewsByCategory("lifestyle");
+    // const filterData = removeDuplicate(newsTop);
     // console.log(newsTop);
 //     console.log(filterData);
 
-    return filterData;
+    return newsTop;
   };
 
   const data = await fetchingData();
   const singledata = data[3];
-  // console.log(singledata);
+  // console.log(data);
   const sliceData = data.slice(0, 6);
   return (
     <div className="w-full flex flex-wrap bg-green-00">
       {sliceData &&
         sliceData.map((item, indx) => (
-          <div key={indx} className="md:w-1/3">
+          <Link key={indx}  href={`/${item.category}/${item._id}`} className="md:w-1/3">
             <BigBox_2 data={item} />
-          </div>
+          </Link>
         ))}
     </div>
   );
