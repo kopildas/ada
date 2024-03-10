@@ -6,9 +6,9 @@ import { getNewsByCategory, getRUSNews } from "../api";
 import Link from "next/link";
 
 
-export const RUS_News = async () => {
+export const RUS_News = async ({category}:{category:string}) => {
   const fetchingData = async () => {
-    const newsTop = await getNewsByCategory("lifestyle");
+    const newsTop = await getNewsByCategory(category);
     // const filterData = removeDuplicate(newsTop);
     // console.log(newsTop);
 //     console.log(filterData);
@@ -21,7 +21,7 @@ export const RUS_News = async () => {
   // console.log(data);
   const sliceData = data.slice(0, 6);
   return (
-    <div className="w-full flex flex-wrap bg-green-00">
+    <div className="w-full flex flex-wrap items-center justify-center md:justify-start bg-green-0 gap-5 md:gap-0">
       {sliceData &&
         sliceData.map((item, indx) => (
           <Link key={indx}  href={`/${item.category}/${item._id}`} className="md:w-1/3">
