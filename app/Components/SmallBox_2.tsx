@@ -6,7 +6,7 @@ import Link from "next/link";
 export const SmallBox_2 = ({ data }: { data: news }) => {
   return (
     <Link
-          href={`/${data.category}/${data._id}`} className='flex flex-col bg-red-00 lg:flex-row w-full mb-10'>
+          href={`/${data.category}/${data._id}`} className='flex flex-col bg-red-00 lg:flex-row w-full mb-10 gap-2'>
         <div className=' md:w-[300px] bg-red-00 flex items-center justify-center'>
         <div className="relative aspect-video h-[220px] md:w-[300px] rounded-xl ">
                 {data.urlToImage && (
