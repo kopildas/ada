@@ -9,6 +9,7 @@ import "./globals.css";
 import Navbar from "./Components/Navbar";
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/utils/SessionProvider";
+import { Footer } from "./Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,10 @@ export default async function RootLayout({
       <body className={inter.className}>
         <SessionProvider>
           <Navbar />
+          <div className="h-fit">
           {children}
+          </div>
+          <Footer/>
         </SessionProvider>
       </body>
     </html>
