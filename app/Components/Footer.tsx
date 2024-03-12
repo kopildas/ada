@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="w-full flex flex-col h-fit bg-red-00 px-5 md:px-[4rem] mt-10">
+    <div className="w-full flex flex-col h-fit bg-red-00 px-5 md:px-[4rem] mt-16">
       <div className="w-full flex flex-col items-center justify-center h-80 bg-gradient-to-r from-slate-800 to-violet-900  rounded-2xl">
         <p className="font-extrabold text-[9rem] md:text-[12rem] bg-gradient-to-r from-slate-500 to-violet-600 inline-block text-transparent bg-clip-text z-10 -mt-10">
           ADA
@@ -12,7 +12,7 @@ export const Footer = () => {
         </p>
       </div>
 
-      <div className="w-full h-fit mt-10 flex flex-col md:flex-row items-center justify-between text-gray-900 gap-10 px-[4rem]">
+      <div className="w-full h-fit md:h-56 mt-10 md:mt-0 flex flex-col md:flex-row items-center justify-between text-gray-900 gap-10 px-[4rem]">
         <div className="flex flex-col items-center justify-center">
           <p className="hover:text-blue-500 cursor-pointer duration-200 transition ease-in-out">About us</p>
           <p className="hover:text-blue-500 cursor-pointer duration-200 transition ease-in-out">Contact us</p>
