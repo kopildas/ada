@@ -1,9 +1,9 @@
 import { connectToDatabase } from "@/utils/connectMongo";
 import { Db } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import { NextResponse,NextRequest } from "next/server";
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async (req: Request | NextRequest, res: NextApiResponse) => {
   //   const { email, password } = await request.json();
   const category: any = req.url?.split("=")[1];
   // Optional chaining and type casting to string
@@ -28,7 +28,7 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     if (!results) {
       return new NextResponse("news not found", { status: 400 });
     }
-    console.log(results);
+    // console.log(results);
     // console.log(JSON.stringify(results));
     return new NextResponse(JSON.stringify(results), { status: 200 });
   } catch (err: any) {
