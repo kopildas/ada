@@ -36,7 +36,7 @@ const BigTopNews = ({ data }: { data: news }) => {
       {data && (
         <Link
           href={`/${data.category}/${data._id}`}
-          className=" w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 xl:-mt-14"
+          className=" w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 2xl:-mt-14"
         >
           <div className="w-full md:h-screen flex flex-col lg:flex-row bg-green-20">
             <div className="lg:w-[60%] bg-red-00 flex items-center justify-center  p-5 md:p-0">
