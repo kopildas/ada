@@ -1,10 +1,14 @@
+'use client'
+
+import { useToggleState } from "@/state/toggle_menu";
 import { news } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
 
 const BigTopNews = ({ data }: { data: news }) => {
   //console.log(data);
-
+  const {isOpen} = useToggleState()
+  console.log(isOpen)
   // Function to calculate time ago
   const timeAgo = (timestamp: string): string => {
     const currentTime = new Date();
@@ -32,22 +36,22 @@ const BigTopNews = ({ data }: { data: news }) => {
       {data && (
         <Link
           href={`/${data.category}/${data._id}`}
-          className="w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 lg:mt-5"
+          className=" w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 lg:mt-5"
         >
           <div className="w-full md:h-screen flex flex-col lg:flex-row bg-green-20">
             <div className="lg:w-[60%] bg-red-00 flex items-center justify-center  p-5 md:p-0">
-              <div className="relative bg-slate-00 aspect-video h-[250px] md:h-[500px] w-full rounded-xl">
+            <div className="relative bg-slate-00 aspect-video h-[250px] md:h-[300px] lg:h-[500px] w-full rounded-xl bg-cover overflow-hidden">
                 {data.urlToImage && (
                   <Image
                     src={data.urlToImage}
                     alt={data.title}
+                    className={`rounded-xl hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
                     fill
-                    className="rounded-xl"
                   />
                 )}
               </div>
             </div>
-            <div className="lg:w-1/2 p-5 bg-red-00 flex flex-col items-start justify-center ml-2 lg:ml-5 bg-red-00 text-zinc-900">
+            <div className="lg:w-1/2 lg:p-5 bg-red-00 flex flex-col items-start justify-center mt-2 lg:mt-0 ml-2 lg:ml-5 bg-red-00 text-zinc-900">
               {/* <p className="text-blue-500">{data.source.name}</p> */}
               <p className="text-xl md:text-2xl font-bold lg:mt-4 mb-6">
                 {data.title}
