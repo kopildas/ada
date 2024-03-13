@@ -17,6 +17,15 @@ const initialFormData: news = {
   publishedAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"),
   content: "",
   category: "",
+  length: 0,
+  slice: function (indexOfFirstItem: number, indexOfLastItem: number) {
+    throw new Error("Function not implemented.");
+  },
+  _id: "",
+  source: {
+    id: "",
+    name: ""
+  }
 };
 
 const Page: React.FC = () => {
