@@ -13,11 +13,12 @@ import {
 import { IoCloseSharp } from "react-icons/io5";
 import Link from "next/link";
 import AuthNavContent from "./AuthNavContent";
+import { useToggleState } from "@/state/toggle_menu";
 
 
 export const HamBurg_Menu = () => {
-
-    const [isOpen, setIsOpen] = useState(false);
+  const {isOpen,setIsOpen} = useToggleState()
+    // const [isOpen, setIsOpen] = useState(false);
     const menuItem = [
         {
           path: "/",
