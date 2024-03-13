@@ -1,9 +1,9 @@
 import { connectToDatabase } from "@/utils/connectMongo";
 import { Db,ObjectId } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async (req: Request | NextApiRequest, res: NextApiResponse) => {
+export const GET = async (req: Request | NextRequest, res: NextApiResponse) => {
   //   const { email, password } = await request.json();
   const id:any = req.url?.split("=")[1];
   // Optional chaining and type casting to string
