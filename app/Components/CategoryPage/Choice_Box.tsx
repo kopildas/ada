@@ -7,6 +7,7 @@ import { getNewsByCategory } from "@/app/api";
 import Link from "next/link";
 import { Related_Big_box_1 } from "./Related_Big_box_1";
 import { Choi_Box_1 } from "./Choi_Box_1";
+import { news } from "@/utils/types";
 
 
 export const Choice_Box = async ({category}:{category:string}) => {

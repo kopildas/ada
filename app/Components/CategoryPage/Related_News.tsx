@@ -6,6 +6,7 @@
 import { getNewsByCategory } from "@/app/api";
 import Link from "next/link";
 import { Related_Big_box_1 } from "./Related_Big_box_1";
+import { news } from "@/utils/types";
 
 
 export const Related_News = async ({category}:{category:string}) => {
