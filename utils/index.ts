@@ -28,8 +28,8 @@ export const db_connection = async (namespace: string,key: string) => {
     
 }
 
-export const removeDuplicate = (articles:any) =>{
-    const randomArticles:news[] = articles?.articles
-    const filteringArticles = randomArticles.filter(article => article?.source.id !== null)
-    return filteringArticles;
-}
+// export const removeDuplicate = (articles:any) =>{
+//     const randomArticles:news[] = articles?.articles
+//     const filteringArticles = randomArticles.filter(article => article?._id !== null)
+//     return filteringArticles;
+// }
