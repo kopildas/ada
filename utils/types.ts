@@ -1,4 +1,5 @@
 export type news= {
+    length: number;
     slice(indexOfFirstItem: number, indexOfLastItem: number): any;
     _id:string,
     source: {
