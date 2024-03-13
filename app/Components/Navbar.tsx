@@ -16,6 +16,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { BsBroadcast } from "react-icons/bs";
 
 import AuthNavContent from "./AuthNavContent";
+import { HamBurg_Menu } from "./HamBurg_Menu";
 
 const Navbar = () => {
   
@@ -51,7 +52,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-full hidden md:block  bg-red-00 h-full mr-5">
+      <div className="w-full hidden lg:block  bg-red-00 h-full mr-5">
         <div className="w-full h-20 bg-red-00 flex items-center justify-end gap-2 ">
           <div className="text-5xl "><TiWeatherPartlySunny/></div>
           <div className="flex flex-col ">
@@ -114,6 +115,22 @@ const Navbar = () => {
               <AuthNavContent/>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="flex lg:hidden w-full flex-col gap-2 mr-2 ">
+        <div className="w-full h-20 bg-red-00 flex items-center justify-end  ">
+          <div className="text-5xl "><TiWeatherPartlySunny/></div>
+          <div className="flex flex-col ">
+            <p>Today</p>
+            <p className="font-semibold text-xl flex justify-end">9 C</p>
+          </div>
+        </div>
+        
+        <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
+
+        <div className="w-full h-10 flex items-center justify-end">
+            <HamBurg_Menu/>
         </div>
       </div>
     </nav>
