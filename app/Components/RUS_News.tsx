@@ -21,12 +21,12 @@ export const RUS_News = async ({category}:{category:string}) => {
   // console.log(data);
   const sliceData = data.slice(0, 6);
   return (
-    <div className="w-full flex flex-wrap items-center justify-center md:justify-start bg-green-0 gap-5 md:gap-0">
+    <div className="w-full flex flex-wrap items-center justify-center md:justify-start bg-green-00 gap-5 md:gap-0">
       {sliceData &&
         sliceData.map((item, indx) => (
-          <Link key={indx}  href={`/${item.category}/${item._id}`} className="md:w-1/3">
+          <div key={indx}className="md:w-1/3">
             <BigBox_2 data={item} />
-          </Link>
+          </div>
         ))}
     </div>
   );
