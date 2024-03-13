@@ -4,6 +4,7 @@ import BigBox_1 from "./BigBox_1";
 import { BigBox_2 } from "./BigBox_2";
 import { getNewsByCategory, getRUSNews } from "../api";
 import Link from "next/link";
+import { news } from "@/utils/types";
 
 
 export const RUS_News = async ({category}:{category:string}) => {
@@ -23,9 +24,9 @@ export const RUS_News = async ({category}:{category:string}) => {
   return (
     <div className="w-full flex flex-wrap items-center justify-center md:justify-start bg-green-00 gap-5 md:gap-0">
       {sliceData &&
-        sliceData.map((item, indx) => (
+        sliceData.map((item: news,indx:any) => (
           <div key={indx}className="md:w-1/3">
-            <BigBox_2 data={item} />
+            <BigBox_2 data={item as news} />
           </div>
         ))}
     </div>
