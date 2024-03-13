@@ -26,9 +26,9 @@ export const Choice_Box = async ({category}:{category:string}) => {
   return (
     <div className="w-full flex flex-col items-center justify-center bg-green-00 gap-5 md:gap-0">
       {sliceData &&
-        sliceData.map((item, indx) => (
+        sliceData.map((item: news,indx:any) => (
           <div key={indx}className="md:w-full flex gap-5">
-            <Choi_Box_1 data={item} />
+            <Choi_Box_1 data={item as news} />
           </div>
         ))}
     </div>

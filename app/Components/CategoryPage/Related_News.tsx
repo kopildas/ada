@@ -25,9 +25,9 @@ export const Related_News = async ({category}:{category:string}) => {
   return (
     <div className="w-full flex flex-wrap items-center justify-center bg-green-00 gap-5 md:gap-0">
       {sliceData &&
-        sliceData.map((item, indx) => (
+        sliceData.map((item: news,indx:any) => (
           <div key={indx}className="md:w-1/3 flex gap-5">
-            <Related_Big_box_1 data={item} />
+            <Related_Big_box_1 data={item as news} />
           </div>
         ))}
     </div>
