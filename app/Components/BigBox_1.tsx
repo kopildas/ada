@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BigBox_1 = ({ data }: { data: news }) => {
-  const truncatedTitle = data.title.length > 60 ? data.title.slice(0, 60) + '...' : data.title;
+  const truncatedTitle = data?.title.length > 10 ? data.title.slice(0, 15) + '...' : data.title;
+  const truncatedTitle2 = data?.title.length > 10 ? data.title.slice(0, 57) + '...' : data.title;
 
   return (
     <Link
@@ -20,8 +21,9 @@ const BigBox_1 = ({ data }: { data: news }) => {
       </div>
 
       <div className="mt-5">
-        <p className="text-3xl font-bold text-zinc-800  mb-2">{truncatedTitle}</p>
-        <p className="text-xl mb-4 text-zinc-500">{data.author}</p>
+      {truncatedTitle && <p className="block lg:hidden md:text-xl text-base font-bold md:mt- mb- text-gray-800">{truncatedTitle}</p>}
+      {truncatedTitle2 && <p className="lg:block hidden lg:text-xl text-base font-bold md:mt- mb-2 text-gray-800">{truncatedTitle2}</p>}       
+      <p className="md:text-base text-lg mb-4 text-zinc-500">{data.author}</p>
       </div>
     </Link>
   );
