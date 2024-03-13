@@ -62,9 +62,9 @@ export const Categorypage = ({ data }: { data: news }) => {
       </div>
 
       <div className='w-full flex flex-col md:flex-row md:flex-wrap bg-red-00 justify-between'>
-        {loop_currentItems && loop_currentItems.map((item,indx)=>(
+        {loop_currentItems && loop_currentItems.map((item: news,indx:any)=>(
             <div key={indx} className='md:w-1/2'>
-                <SmallBox_2 data={item}/>
+                <SmallBox_2 data={item as news}/>
             </div>
         ))}
     </div>
