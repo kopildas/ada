@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TopNews from "./Components/TopNews";
 // import { getNewsTopHeadlines } from "../api";
-import { removeDuplicate } from "@/utils";
+
 import TextMarquee from "./Components/TextMarquee";
 import { LatestNews } from "./Components/LatestNews";
 import BigBox_1 from "./Components/BigBox_1";
