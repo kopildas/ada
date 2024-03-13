@@ -2,11 +2,11 @@
 
 import { Add_Category } from "@/app/Components/Admin/Add_Category";
 import { Image_Show } from "@/app/Components/Admin/Image_Show";
+import { Loadder } from "@/app/Components/Loadder";
 import { news } from "@/utils/types";
 import axios from "axios";
+import { format } from "date-fns";
 import React, { useState } from "react";
-import { format, subDays } from "date-fns";
-import { Loadder } from "@/app/Components/Loadder";
 
 const initialFormData: news = {
   author: "Ada News",
@@ -14,12 +14,12 @@ const initialFormData: news = {
   description: "",
   url: "",
   urlToImage: "",
-  publishedAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"), 
+  publishedAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"),
   content: "",
   category: "",
 };
 
-export default function page() {
+const Page: React.FC = () => {
   let [formData, setFormData] = useState(initialFormData);
   let [isLoadding, setIsLoadding] = useState(false);
   let [submitLoadding, setSubmitLoadding] = useState(false);
@@ -90,7 +90,7 @@ export default function page() {
 
   async function onSubmit(e: any) {
     e.preventDefault();
-    setSubmitLoadding(true)
+    setSubmitLoadding(true);
     if (
       !formData.title ||
       !formData.description ||
@@ -110,7 +110,7 @@ export default function page() {
         console.log(formData);
         const namespace = "pageview";
         // const res = await axios.post("/api/register",formData)
-        setFormData(initialFormData)
+        setFormData(initialFormData);
         if (res.status === 400) {
           // setError("This email is already registered");
         }
@@ -124,13 +124,14 @@ export default function page() {
         console.log(error);
       }
     }
-    setSubmitLoadding(false)
+    setSubmitLoadding(false);
   }
-  if(submitLoadding)return (
-    <>
-    <Loadder/>
-    </>
-  )
+  if (submitLoadding)
+    return (
+      <>
+        <Loadder />
+      </>
+    );
 
   return (
     <div className="bg-red-00 h-fit flex flex-col">
@@ -140,13 +141,13 @@ export default function page() {
       <div className="mt-10 px-10 w-full flex flex-col bg-red-00 z-10 h-auto md:flex-row">
         {isLoadding ? (
           <div className="md:w-[35%] bg-green-00">
-          <div className="w-80 h-96 bg-zinc-200 rounded-3xl flex flex-col items-center justify-center shadow-2xl text-zinc-700">
-            <div className="loadingio-spinner-rolling-hzwlgzevidp">
-              <div className="ldio-juih00wo6og">
-                <div></div>
+            <div className="w-80 h-96 bg-zinc-200 rounded-3xl flex flex-col items-center justify-center shadow-2xl text-zinc-700">
+              <div className="loadingio-spinner-rolling-hzwlgzevidp">
+                <div className="ldio-juih00wo6og">
+                  <div></div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         ) : (
           <div className="md:w-[35%] bg-green-00">
@@ -234,4 +235,6 @@ export default function page() {
       </div>
     </div>
   );
-}
+};
+
+export default Page;
