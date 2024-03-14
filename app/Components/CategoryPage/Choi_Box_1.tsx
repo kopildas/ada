@@ -16,10 +16,10 @@ export const Choi_Box_1 = ({ data }: { data: news }) => {
   return (
     <Link
       href={`/${data.category}/${data._id}`}
-      className="flex md:flex-col lg:flex-row w-full lg:mb-10 bg-blue-00 lg:items-center lg:justify-center h-fit"
+      className="flex md:flex-col lg:flex-row w-full lg:mb-10 bg-blue-00 lg:items-center lg:justify-center h-fit mr-5"
     >
-      <div className="w-full lg:w-[30%] bg-red-00 flex items-center justify-center bg-green-00 px-5">
-        <div className="relative  h-20 aspect-video   rounded-xl bg-cover overflow-hidden">
+      <div className="lg:w-[40%]  bg-red-00 flex items-center justify-center bg-green-00">
+        <div className="relative  lg:h-20 aspect-video w-full rounded-xl bg-cover overflow-hidden">
           {data.urlToImage && (
             <Image
               src={data.urlToImage}
@@ -32,14 +32,14 @@ export const Choi_Box_1 = ({ data }: { data: news }) => {
           )}
         </div>
       </div>
-      <div className="w-full lg:w-[60%] flex flex-col items-start md:justify-center md:mr-0 bg-red-00 text-zinc-900 px-5">
+      <div className="w-full lg:w-[80%] flex flex-col items-start md:justify-center md:mr-0 px-2 bg-red-00 text-zinc-900">
         {truncatedTitle && (
           <p className="block lg:hidden lg:text-sm text-sm font-bold md:mt-2">
             {truncatedTitle}
           </p>
         )}
         {truncatedTitle2 && (
-          <p className="lg:block hidden lg:text-ltext-sm text-ltext-sm font-bold md:mt-2">
+          <p className="lg:block hidden lg:text-l text-sm font-bold md:mt-2">
             {truncatedTitle2}
           </p>
         )}
