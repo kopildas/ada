@@ -58,7 +58,7 @@ if(res_data){
 }
 
   return (
-    <div className="w-full h-auto bg-slate-400 mt-10 ml-10 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 p-5 text-slate-100">
+    <div className="w-full h-96 bg-slate-400 mt-10 ml-10 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 p-5 text-slate-100">
       {res_data && formattedData && (
         <BarChart
           allowDecimals={false}
