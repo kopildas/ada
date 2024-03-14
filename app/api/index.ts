@@ -1,5 +1,5 @@
 export const getNewsTopHeadlines = async () => {
-  const newData = await fetch(`http://localhost:3000/api/getallnews`, {
+  const newData = await fetch(`${process.env.NEXTAUTH_URL}/api/getallnews`, {
     cache: "no-store",
   });
   return newData.json();
