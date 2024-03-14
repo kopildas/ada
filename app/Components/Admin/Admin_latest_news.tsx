@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+
 
 export const Admin_latest_news = async () => {
   const get_all_news_link = new URL(
@@ -65,16 +67,17 @@ export const Admin_latest_news = async () => {
   // console.log(all_News_Data);
 
   return (
-    <div className="w-full h-auto bg-slate-600 mt-10 ml-10 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 p-5">
+    <div className="w-full h-96 overflow-y-scroll no-scrollbar bg-slate-600 mt-10 ml-10 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 p-5 mb-5">
       <p className="font-semibold">Latest News</p>
 
       {all_News_Data &&
         all_News_Data.data.map((item:any) => (
-          <div
+          <Link
+    href={`/${item.category}/${item._id}`}
             key={item._id}
             className="w-full h-[5rem] bg-zinc-100 mt-5 flex items-center justify-center border rounded-lg py-2 lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60"
           >
-            <div className="w-[20%] h-16 bg-green-00">
+            <div className="w-[20%] bg-green-10 ml-5">
               <div className="relative aspect-video rounded-xl ">
                 <Image
                   src={item.urlToImage}
@@ -85,7 +88,7 @@ export const Admin_latest_news = async () => {
               </div>
             </div>
             <div className="w-[80%] ml-5">
-              <p className="text-lg text-zinc-800  md:mb-2">
+              <p className="text-lg text-zinc-800">
                 {item.title.length > 50
                   ? item.title.slice(0, 35) + "..."
                   : item.title}
@@ -94,7 +97,7 @@ export const Admin_latest_news = async () => {
                 {item.publishedAt.slice(0, 10)}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
     </div>
   );
