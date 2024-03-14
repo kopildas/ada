@@ -41,8 +41,8 @@ const page = async () => {
           <Realtime_Statistics_Data/>
         </div>
 
-        <div className="w-full h-[1px] px-10">
-          <div className="w-full h-[1px] bg-zinc-500"></div>
+        <div className="w-full h-[1px] px-10 mt-5">
+          <div className="w-full h-[1px] bg-zinc-400"></div>
         </div>
 
         <div className="w-full flex flex-col md:flex-row gap-5">
