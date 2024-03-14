@@ -3,7 +3,7 @@ import BigTopNews from "./BigTopNews";
 import SmallBox_1 from "./SmallBox_1";
 
 const TopNews = ({ data }: { data: news[] }) => {
-  const singledata = data[1];
+  const singledata = data[0];
   // console.log(data)
     // console.log(singledata)
   return (
@@ -26,9 +26,9 @@ const TopNews = ({ data }: { data: news[] }) => {
             <div className="w-[80%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5 "></div>
           </div>
           {singledata && <SmallBox_1 data={data[1]} />}
-          {singledata && <SmallBox_1 data={data[1]} />}
-          {singledata && <SmallBox_1 data={data[1]} />}
-          {singledata && <div className="hidden lg:block"><SmallBox_1 data={data[1]} /></div>}
+          {singledata && <SmallBox_1 data={data[2]} />}
+          {singledata && <SmallBox_1 data={data[3]} />}
+          {singledata && <div className="hidden lg:block"><SmallBox_1 data={data[4]} /></div>}
         </div>
       </div>
     </>
