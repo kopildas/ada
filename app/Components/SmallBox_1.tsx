@@ -31,8 +31,8 @@ function SmallBox_1({ data }: { data: news }) {
         </div>
       </div>
       <div className="lg:w-3/5 lg:ml-5">
-      {truncatedTitle && <p className="block lg:hidden md:text-xl text-base font-bold md:mt- mb- text-gray-800">{truncatedTitle}</p>}
-      {truncatedTitle2 && <p className="lg:block hidden lg:text-xl text-base font-bold md:mt- mb-2 text-gray-800">{truncatedTitle2}</p>}         <p className="text-base text-zinc-500">{publishedDate}</p>
+      {truncatedTitle && <p className="block lg:hidden md: text-base font-bold md:mt- mb- text-gray-800">{truncatedTitle}</p>}
+      {truncatedTitle2 && <p className="lg:block hidden lg: text-base font-bold md:mt- mb-2 text-gray-800">{truncatedTitle2}</p>}         <p className="text-base text-zinc-500">{publishedDate}</p>
       </div>
     </Link>
   );
