@@ -1,21 +1,25 @@
+"use client";
+
+import { useToggleState } from "@/state/toggle_menu";
 import { news } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
 
 const BigBox_1 = ({ data }: { data: news }) => {
+  const {isOpen} = useToggleState()
   const truncatedTitle = data?.title.length > 10 ? data.title.slice(0, 15) + '...' : data.title;
   const truncatedTitle2 = data?.title.length > 10 ? data.title.slice(0, 57) + '...' : data.title;
 
   return (
     <Link
     href={`/${data.category}/${data._id}`} className="w-1/3 flex flex-col">
-      <div className="relative aspect-video rounded-xl ">
-        {data.urlToImage && (
-          <Image
-            src={data.urlToImage}
-            alt={data.title}
+      <div className="relative aspect-video rounded-xl bg-cover overflow-hidden">
+                {data.urlToImage && (
+                  <Image
+                    src={data.urlToImage}
+                    alt={data.title}
+                    className={`rounded-xl hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
             fill
-            className="rounded-xl"
           />
         )}
       </div>
