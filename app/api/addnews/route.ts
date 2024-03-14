@@ -4,12 +4,17 @@ import mongoose from "mongoose";
 import { Db } from "mongodb";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
+import { news } from "@/utils/types";
 
 export const POST = async (request: any) => {
   try {
-    const formData = await request.json();
+    let formData = await request.json();
     console.log("data from add news api " + JSON.stringify(formData));
-
+    // formData =JSON.s' tringify(formData)
+    const data : news = formData
+    console.log(data)
+    console.log(data.author)
+     console.log("formadata = "+formData.author)
     const connection = await connectToDatabase();
     if (!connection) {
       // response.status(500).json({ error: 'Failed to connect to database' });
@@ -32,7 +37,16 @@ export const POST = async (request: any) => {
     //   const hashedPassword = await bcrypt.hash(password, 5);
 
     try {
-      const results = await collection.insertOne(formData);
+      const results = await collection.insertOne({
+        author: formData.author,
+        title: formData.title,
+        description: formData.description,
+        url: formData.url,
+        urlToImage: formData.urlToImage,
+        publishedAt: formData.publishedAt,
+        content: formData.content,
+        category: formData.category,
+      });
       console.log(results);
       return new NextResponse("News added... ", { status: 200 });
     } catch (err: any) {
