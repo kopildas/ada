@@ -1,4 +1,3 @@
-"use client";
 
 import { Choice_Box } from "@/app/Components/CategoryPage/Choice_Box";
 import { Related_News } from "@/app/Components/CategoryPage/Related_News";
@@ -18,7 +17,7 @@ async function page({
   // let dataa = await fetchingData()
 // let flag = true
 // if(flag){
-  let categorry = await getNewsByCategory(params.category);
+  // let categorry = await getNewsByCategory(params.category);
   let data = await getNews(params.newsid);
   // let [categoryData, data] = await fetchingData()
 
@@ -62,7 +61,7 @@ async function page({
 
     
     <div className="bg-red-00 flex flex-col md:flex-row md:mt-10 ">
-      <div className="md:w-[75%] h-auto bg-green-00 flex flex-col ,d:pl-14 p-2 md:p-0 ">
+      <div className="md:w-[75%] h-auto bg-green-00 flex flex-col md:pl-14 p-2 md:p-0 ">
         <p className="text-gray-900 text-4xl font-semibold  mr-5">
           {data.title}
         </p>
