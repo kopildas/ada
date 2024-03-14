@@ -34,8 +34,9 @@ export const POST = async (request: any) => {
     try {
       const results = await collection.insertOne(formData);
       console.log(results);
-      return new NextResponse("user is registered", { status: 200 });
+      return new NextResponse("News added... ", { status: 200 });
     } catch (err: any) {
+      console.log("error frm addnews : "+err)
       return new NextResponse(err, {
         status: 502,
       });
