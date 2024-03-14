@@ -2,6 +2,7 @@
 import { Choice_Box } from "@/app/Components/CategoryPage/Choice_Box";
 import { Related_News } from "@/app/Components/CategoryPage/Related_News";
 import { RUS_News } from "@/app/Components/RUS_News";
+import { Single_Top_img } from "@/app/Components/Single_Top_img";
 import { getNews, getNewsByCategory } from "@/app/api";
 import Image from "next/image";
 
@@ -73,14 +74,7 @@ async function page({
           <p>Share it on : </p>
         </div>
 
-        <div className="relative bg-slate-00 aspect-video h-[250px] md:h-[600px] w-[95%] rounded-xl mt-7 pr-10 ">
-          <Image
-            src={data.urlToImage}
-            alt={data.title}
-            fill
-            className="rounded-xl"
-          />
-        </div>
+        <Single_Top_img data={data}/>
 
         <div className="flex flex-col mt-10 mb-5 bg-green-00 text-gray-600 text-2xl font-semibold">
           <p className="">{data.description}</p>
