@@ -17,9 +17,10 @@ import {
 
 function Share_Buttons() {
   const currentURL = usePathname();
-  const link = `${process.env.NEXTAUTH_URL}/${currentURL}`;
-  console.log(link);
-  console.log(currentURL);
+  const url ="https://adanews.vercel.app"
+  const link = `${url}${currentURL}`;
+//   console.log(link);
+//   console.log(currentURL);
 
   return (
     <div className="flex gap-3 bg-red-0">
