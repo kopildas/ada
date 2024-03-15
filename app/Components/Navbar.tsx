@@ -57,7 +57,7 @@ const Navbar = () => {
           <div className="text-5xl "><TiWeatherPartlySunny/></div>
           <div className="flex flex-col ">
             <p>Today</p>
-            <p className="font-semibold text-xl flex justify-end">9 C</p>
+            <p className="font-semibold text-xl flex justify-end">9&deg; C</p>
           </div>
         </div>
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
