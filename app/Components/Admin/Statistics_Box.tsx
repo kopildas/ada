@@ -14,7 +14,7 @@ interface Props {
 
 export const Statistics_Box: React.FC<Props> = ({ logo, number, title }) => {
   return (
-    <div className={`w-[20%] h-[6rem] flex items-center justify-center gap-5 bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 rounded-lg ${logo === "BsGraphUpArrow" && "bg-green-50"} ${logo === "RiFolderHistoryLine" && "bg-green-50"} ${logo === "BsPostcard" && "bg-green-50"} ${logo === "IoPersonOutline" && "bg-green-50"}`}>
+    <div className={`w-[22%] h-[6rem] flex items-center justify-center gap-5 bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 rounded-lg ${logo === "BsGraphUpArrow" && "bg-green-50"} ${logo === "RiFolderHistoryLine" && "bg-green-50"} ${logo === "BsPostcard" && "bg-green-50"} ${logo === "IoPersonOutline" && "bg-green-50"}`}>
 
       <div>
         <p className='text-4xl font-semibold'>{number}</p>
