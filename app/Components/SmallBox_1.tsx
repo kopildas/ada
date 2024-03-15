@@ -17,22 +17,22 @@ function SmallBox_1({ data }: { data: news }) {
 
   return (
     <Link
-    href={`/${data.category}/${data._id}`} className="w-full flex flex-col lg:flex-row p-5 md:ml-6 lg:ml-0 -mt-5 lg:mt-0">
+    href={`/${data.category}/${data._id}`} className="w-full flex flex-col lg:flex-row p-5 md:ml-6 lg:ml-0 -mt-5 lg:mt-0 group">
       <div className="lg:w-2/5">
         <div className="relative aspect-video rounded-xl bg-cover overflow-hidden">
                 {data.urlToImage && (
                   <Image
                     src={data.urlToImage}
                     alt={data.title}
-                    className={`rounded-xl hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
+                    className={`rounded-xl group-hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
               fill
             />
           )}
         </div>
       </div>
       <div className="lg:w-3/5 lg:ml-5">
-      {truncatedTitle && <p className="block lg:hidden md: text-base font-bold md:mt- mb- text-gray-800">{truncatedTitle}</p>}
-      {truncatedTitle2 && <p className="lg:block hidden lg: text-base font-bold md:mt- mb-2 text-gray-800">{truncatedTitle2}</p>}         <p className="text-base text-zinc-500">{publishedDate}</p>
+      {truncatedTitle && <p className="block lg:hidden md: text-base font-bold md:mt- mb- text-gray-800 group-hover:text-blue-500 duration-500 transition ease-in-out">{truncatedTitle}</p>}
+      {truncatedTitle2 && <p className="lg:block hidden lg: text-base font-bold md:mt- mb-2 text-gray-800 group-hover:text-blue-500 duration-500 transition ease-in-out">{truncatedTitle2}</p>}         <p className="text-base text-zinc-500 group-hover:text-blue-500 duration-500 transition ease-in-out" >{publishedDate}</p>
       </div>
     </Link>
   );

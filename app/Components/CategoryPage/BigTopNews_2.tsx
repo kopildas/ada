@@ -35,7 +35,7 @@ const BigTopNews_2 = ({ data }: { data: news }) => {
       {data && (
         <Link
           href={`/${data.category}/${data._id}`}
-          className="w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 lg:mt-5"
+          className="w-full md:h-[calc(100vh-190px)] flex flex-col bg-red-00 lg:mt-5 group"
         >
           <div className="w-full md:h-screen flex flex-col bg-green-20">
             <div className="lg:w-full bg-red-00 flex items-center justify-center md:p-0">
@@ -44,19 +44,19 @@ const BigTopNews_2 = ({ data }: { data: news }) => {
                   <Image
                     src={data.urlToImage}
                     alt={data.title}
-                    className={`rounded-xl hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
+                    className={`rounded-xl group-hover:scale-110 duration-500 transition ease-in-out ${isOpen ? "-z-10" : "z-10"}`}
                     fill
                   />
                 )}
               </div>
             </div>
-            <div className="lg:w-full bg-red-00 flex flex-col items-start justify-center bg-red-00 text-zinc-900">
+            <div className="lg:w-full bg-red-00 flex flex-col items-start justify-center bg-red-00 text-zinc-900 group-hover:text-blue-500 duration-500 transition ease-in-out">
               {/* <p className="text-blue-500">{data.source.name}</p> */}
               <p className="text-xl md:text-2xl font-bold mt-2 mb-2 lg:mt-4 lg:mb-6">
                 {data.title}
               </p>
-              <p className="text-xl lg:mb-4 mb-2 text-zinc-500">{data.author}</p>
-              <p className="text-sm text-zinc-500 mb-4">
+              <p className="text-xl lg:mb-4 mb-2 text-zinc-500 group-hover:text-blue-500 duration-500 transition ease-in-out">{data.author}</p>
+              <p className="text-sm text-zinc-500 mb-4 group-hover:text-blue-500 duration-500 transition ease-in-out">
                 Published {timeAgo(data.publishedAt)}
               </p>
             </div>
