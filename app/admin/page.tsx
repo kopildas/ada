@@ -32,12 +32,12 @@ const page = async () => {
   return (
 
       
-      <div className="w-full h-screen bg-slate-300 flex flex-col">
+      <div className="w-full h-screen bg-slate-300 flex flex-col mb-20">
         <div className="w-full h-20 bg-blue-00 px-5 py-5">
           <p className="text-3xl font-semibold">Dashboard</p>
           <p className="text-xl text-zinc-600">Welcome back</p>
         </div>
-        <div className="w-full h-[10rem] bg-blue-00 flex items-center justify-center gap-12">
+        <div className="mt-5 w-full h-[10rem] bg-blue-00 flex items-center justify-center gap-8">
           <Realtime_Statistics_Data/>
         </div>
 
