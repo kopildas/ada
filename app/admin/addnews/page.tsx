@@ -143,7 +143,7 @@ const Page: React.FC = () => {
     );
 
   return (
-    <div className="bg-red-00 h-fit flex flex-col">
+    <div className="bg-red-00 h-fit flex flex-col mb-20">
       <div className="bg-zinc-400 p-5">
         <p className="text-3xl font-semibold">Add New</p>
       </div>
