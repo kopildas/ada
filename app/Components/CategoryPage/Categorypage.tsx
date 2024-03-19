@@ -55,13 +55,13 @@ export const Categorypage = ({ data }: { data: news }) => {
         {/* <BigBox_2 data={item} /> */}
       </div>
 
-      <div className="hidden md:flex items-center justify-center gap-10 md:-mt-[30rem] lg:mt-[3rem] mb-[5rem] px-5">
+      <div className="hidden md:flex items-center justify-center gap-10 mt-10 md:-mt-[10rem] lg:mt-[3rem] mb-[5rem] px-5">
       {currentItems[5] && <BigBox_3 data={currentItems[5]} />}
       {currentItems[6] && <BigBox_3 data={currentItems[6]} />}
       {currentItems[7] && <BigBox_3 data={currentItems[7]} />}
       </div>
 
-      <div className='w-full flex flex-col md:flex-row md:flex-wrap bg-red-00 justify-between'>
+      <div className='w-full mt-10 flex flex-col md:flex-row md:flex-wrap bg-red-00 justify-between'>
         {loop_currentItems && loop_currentItems.map((item: news,indx:any)=>(
             <div key={indx} className='md:w-1/2'>
                 <SmallBox_2 data={item as news}/>
