@@ -26,7 +26,7 @@ export const SmallBox_2 = ({ data }: { data: news }) => {
                 )}
               </div>
         </div>
-        <div className='lg:w-3/5 flex flex-col items-start justify-center lg:mr-5 bg-red-00 text-zinc-900 group-hover:text-blue-500 duration-500 transition ease-in-out lg:ml-2'>
+        <div className='lg:w-3/5 flex flex-col items-start justify-center lg:mr-5 bg-red-00 text-zinc-900 group-hover:text-blue-500 duration-500 transition ease-in-out ml-2'>
               {/* <p className="text-blue-500 mt-2 md:mt-0">{data.source.name}</p> */}
               {truncatedTitle && <p className="block lg:hidden lg:text-xl text-lg font-bold md:mt-4 mb-2">{truncatedTitle}</p>}
               {truncatedTitle2 && <p className="lg:block hidden lg:text-xl text-lg font-bold md:mt-4 mb-2">{truncatedTitle2}</p>}
