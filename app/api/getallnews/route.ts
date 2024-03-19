@@ -30,7 +30,7 @@ export async function GET(){
     all_news = all_news.reverse();
 
 
-    const successResponse:any = { message: "Getting all viewers", data: all_news };
+    const successResponse:any = { message: "Getting all news", data: all_news };
     // console.log("Success response:", JSON.stringify(successResponse)); // Log success response
     return new NextResponse(JSON.stringify(successResponse), { status: 200 });
   } catch (err: any) {
