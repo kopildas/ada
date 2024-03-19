@@ -6,7 +6,7 @@ import { useToggleState } from "@/state/toggle_menu";
 
 import { news } from "@/utils/types";
 import { Search_Data } from "./Search_Data";
-import { Search_Box } from "./Search_Box";
+// import { Search_Box } from "./Search_Box";
 import { IoCloseSharp } from "react-icons/io5";
 import { MdOutlineSearch } from "react-icons/md";
 

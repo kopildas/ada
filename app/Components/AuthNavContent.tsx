@@ -5,7 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 import { Search_Button } from "./Search_Option/Search_Button";
 import { news } from "@/utils/types";
 
-const AuthNavContent = ({ data }: { data: news[] }) => {
+const AuthNavContent = () => {
   const { data: session }: any = useSession();
   return (
     <>

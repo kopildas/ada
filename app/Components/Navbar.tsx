@@ -114,7 +114,7 @@ const Navbar = ({ data }: { data: news[] }) => {
               >
                 Travel
               </Link>
-              <AuthNavContent data={data}/>
+              <AuthNavContent/>
              
             </li>
           </ul>
