@@ -12,7 +12,7 @@ import { MdOutlineSearch } from "react-icons/md";
 
 
 
-export const Search_Button = ({ data }: { data: news[] }) => {
+export const Search_Button = () => {
   // const get_all_news_link = new URL(
   //   `${process.env.NEXTAUTH_URL}/api/getallnews`
   // );
@@ -43,13 +43,13 @@ export const Search_Button = ({ data }: { data: news[] }) => {
     // setChange(!change);
       // setText(e.target.value);
       // let foo = [...sortedFoods];
-      let searchData: news[] = data.filter((data:news) =>
+      let searchData: news[] = newsData.filter((data:news) =>
         data.title.toLowerCase().includes(e.target.value)
       );
       setNews_search_data(searchData)
       // setLength(foo.length);
     };
-    console.log(data)
+    console.log(newsData)
     console.log(news_search_data)
 
   return <>  <div className="group relative">

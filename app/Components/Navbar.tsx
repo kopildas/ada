@@ -133,7 +133,7 @@ const Navbar = ({ data }: { data: news[] }) => {
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
 
         <div className="w-full h-10 flex items-center justify-end gap-2">
-        <Search_Button data={data}/>
+        <Search_Button/>
             <HamBurg_Menu/>
         </div>
       </div>
