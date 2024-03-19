@@ -8,6 +8,7 @@ import BigBox_1 from "./Components/BigBox_1";
 import { RUS_News } from "./Components/RUS_News";
 import { getNewsTopHeadlines } from "./api";
 import Link from "next/link";
+import { Related_News } from "./Components/CategoryPage/Related_News";
 
 
 export default async function Home() {
@@ -883,8 +884,8 @@ export default async function Home() {
             </Link>
             <div className="w-[65%] md:w-[80%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5"></div>
           </div>
-          <div className="lg:ml-16 md:ml-0 ml-10">
-          <RUS_News category="world"/>
+          <div className="lg:ml-16 md:ml-0 ">
+          <Related_News category="world"/>
           </div>
 
 
@@ -896,8 +897,8 @@ export default async function Home() {
             </Link>
             <div className="w-[55%] md:w-[80%] h-[2px] bg-gradient-to-r from-slate-800 to-white ml-5"></div>
           </div>
-          <div className="lg:ml-16 md:ml-0 ml-10 ">
-          <RUS_News category="business"/>
+          <div className="lg:ml-16 md:ml-0  ">
+          <Related_News category="business"/>
           </div>
           </div>
 
