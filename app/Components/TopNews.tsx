@@ -1,6 +1,7 @@
 import { news } from "@/utils/types";
 import BigTopNews from "./BigTopNews";
 import SmallBox_1 from "./SmallBox_1";
+import { Add_Data_To_Global_Context } from "./Add_Data_To_Global_Context";
 
 const TopNews = ({ data }: { data: news[] }) => {
   const singledata = data[0];
@@ -8,6 +9,7 @@ const TopNews = ({ data }: { data: news[] }) => {
     // console.log(singledata)
   return (
     <>
+    <Add_Data_To_Global_Context data={data}/>
       <div className="w-full h-[calc(100vh-160px)] flex flex-col md:flex-row bg-red-00">
         <div className="md:w-[70%]">
           <div className="flex w-full items-center justify-start mt-10 mb md:mb-10 lg:-ml-5 bg-red-00">
