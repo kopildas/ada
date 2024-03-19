@@ -17,8 +17,10 @@ import { BsBroadcast } from "react-icons/bs";
 
 import AuthNavContent from "./AuthNavContent";
 import { HamBurg_Menu } from "./HamBurg_Menu";
+import { Search_Button } from "./Search_Option/Search_Button";
+import { news } from "@/utils/types";
 
-const Navbar = () => {
+const Navbar = ({ data }: { data: news[] }) => {
   
   return (
     <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-">
@@ -61,9 +63,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
-        <div className="w-full h-[79px] bg-reen-300 flex items-center justify-end">
+        <div className="w-full h-[79px] bg-green-00 flex items-center justify-end">
           <ul>
-            <li className="space-x-6 font-semibold text-base ">
+            <li className="space-x-4 font-semibold text-base bg-red-00 w-full flex items-center justify-center">
               <Link
                 className="hover:text-blue-500 transition ease-in-out duration-200"
                 href="/world"
@@ -112,7 +114,8 @@ const Navbar = () => {
               >
                 Travel
               </Link>
-              <AuthNavContent/>
+              <AuthNavContent data={data}/>
+             
             </li>
           </ul>
         </div>
@@ -129,7 +132,8 @@ const Navbar = () => {
         
         <div className="w-full h-[1px] bg-gradient-to-r from-BASE_line to-slate-400"></div>
 
-        <div className="w-full h-10 flex items-center justify-end">
+        <div className="w-full h-10 flex items-center justify-end gap-2">
+        <Search_Button data={data}/>
             <HamBurg_Menu/>
         </div>
       </div>
