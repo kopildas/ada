@@ -50,53 +50,53 @@ export const HamBurg_Menu = () => {
         className="text-4xl text-gray-200 cursor-pointer"
       />)}
       {isOpen && (
-         <div className="lg:hidden w-screen h-fit bg-blue-500 text-white z-50 -ml-[24rem] md:-ml-[49rem] pr-10 pt-4 pb-4 absolute">
+         <div className="lg:hidden w-screen h-screen bg-blue-500 text-white z-50 -ml-[23rem] md:-ml-[49rem] mt-16 pb-4 absolute bg-opacity-5 backdrop-blur-sm inset-0">
          <ul className="">
-           <li className="space-y-6 flex flex-col items-end justify-end font-semibold text-base ">
+           <li className="space-y-6 flex flex-col items-end justify-end font-semibold bg-blue-500 text-base p-5">
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/world"
              >
                World
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/business"
              >
                Business
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/science"
              >
                Science
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/health"
              >
                Health
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/sport"
              >
                Sport
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/lifestyle"
              >
                Lifestyle
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/food"
              >
                Food
              </Link>
              <Link
-               className="hover:text-blue-500 transition ease-in-out duration-200"
+               className="hover:text-gray-600 hover:pr-5 transition ease-in-out duration-200"
                href="/travel"
              >
                Travel
