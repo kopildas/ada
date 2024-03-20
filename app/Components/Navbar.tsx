@@ -26,7 +26,9 @@ const Navbar = () => {
     <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-">
       <div className="w-auto bg-green-00 h-full flex items-center justify-center gap- ml-5">
         <div className="w-32 md:w-36 h-full bg-rd-300 flex items-center justify-center">
-          <Image src={logo} alt="ada logo" />
+        <Link href="/">
+           <Image src={logo} alt="ada logo" />
+          </Link>
         </div>
         <div className="h-full bg-red-40 hidden  md:flex items-center justify-center px-5 w-auto">
           <button className="bg-slate-300 px-3 py-2 rounded-3xl text-lg text-blue-500 md:w-36 flex items-center justify-center">
