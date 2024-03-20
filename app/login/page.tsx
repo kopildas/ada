@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const [error, setError] = useState("");
   // const session = useSession();
@@ -41,7 +43,7 @@ const Login = () => {
       email,
       password,
     });
-    console.log("res for check = " +res)
+    console.log("res for check = " + res);
 
     if (res?.error) {
       setError("Invalid email or password...");
@@ -54,7 +56,7 @@ const Login = () => {
   if (session?.status === "loading") {
     return <h1 className="text-zinc-900">Loading...</h1>;
   }
-// const session?.status:string ="sadf"
+  // const session?.status:string ="sadf"
   return (
     session?.status !== "authenticated" && (
       <div className="flex min-h-screen flex-col items-center justify-between p-24 backdrop-blur-md">
@@ -63,16 +65,34 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full text-zinc-700 bg-transparent border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
               placeholder="Email"
+              id="email"
+              // value={email}
+              // onChange={onChange}
               required
             />
-            <input
-              type="password"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
-              placeholder="Password"
-              required
-            />
+            <div className="relative mb-4 text-gray-100">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                placeholder="Password (A-z,0-9)"
+                // value={password}
+                // onChange={onChange}
+                className="w-full text-zinc-700 bg-transparent border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              />
+              {showPassword ? (
+                <AiFillEyeInvisible
+                  className="absolute top-5 text-zinc-700 transform -translate-y-1/2 right-3 text-xl cursor-pointer"
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                />
+              ) : (
+                <AiFillEye
+                  className="absolute transform -translate-y-1/2 right-3 top-5 text-zinc-700 text-xl cursor-pointer"
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                />
+              )}
+            </div>
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
@@ -82,14 +102,7 @@ const Login = () => {
             </button>
             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
           </form>
-          <button
-            className="w-full bg-black py-2 rounded hover:bg-gray-800"
-            onClick={() => {
-              signIn("github");
-            }}
-          >
-            Sign In with Github
-          </button>
+          
           <div className="text-center text-gray-500 mt-4">- OR -</div>
           <Link
             className="block text-center text-blue-500 hover:underline mt-2"
