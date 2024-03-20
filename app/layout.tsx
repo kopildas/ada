@@ -11,6 +11,7 @@ import { getServerSession } from "next-auth";
 import SessionProvider from "@/utils/SessionProvider";
 import { Footer } from "./Components/Footer";
 import { getNewsTopHeadlines } from "./api";
+import { Add_Data_To_Global_Context } from "./Components/Add_Data_To_Global_Context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -866,7 +867,7 @@ export default async function RootLayout({
   // data= data.data
   const singledata = data[3];
   // console.log(singledata);
-  console.log(data);
+  // console.log(data);
 
 
 
@@ -875,7 +876,8 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider>
-          <Navbar data={data}/>
+          <Add_Data_To_Global_Context data={data}/>
+          <Navbar/>
           <div className="h-fit">
           {children}
           </div>

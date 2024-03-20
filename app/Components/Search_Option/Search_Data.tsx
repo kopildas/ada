@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Search_Data = ({ data }: { data: news[] }) => {
   return (
     <div className="w-full h-96 overflow-y-scroll no-scrollbar bg-slate-600 mt-10 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 border border-gray-100 p-5 mb-5">
-      <p className="font-semibold">Latest News</p>
+      <p className="font-semibold">Search Results</p>
 
       {data &&
         data.map((item: any) => (

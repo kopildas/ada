@@ -20,7 +20,7 @@ import { HamBurg_Menu } from "./HamBurg_Menu";
 import { Search_Button } from "./Search_Option/Search_Button";
 import { news } from "@/utils/types";
 
-const Navbar = ({ data }: { data: news[] }) => {
+const Navbar = () => {
   
   return (
     <nav className="w-full h-40 flex bg-gradient-to-r from-slate-800 to-violet-900 px-">
