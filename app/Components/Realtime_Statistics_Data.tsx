@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { Statistics_Box } from './Admin/Statistics_Box'
 import { ViewerData } from '@/utils/types';
+import { useToggleState } from "@/state/toggle_menu";
 
 
 
 
 async function getAllViewerData(): Promise<ViewerData> {
-    // const nextAuthUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+  // const nextAuthUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
     // const link = new URL(`${nextAuthUrl}/api/getallviewer`);
     const response = await fetch("/api/getallviewer");
     if (!response.ok) {
@@ -35,6 +36,7 @@ async function getAllViewerData(): Promise<ViewerData> {
 
 
 export const Realtime_Statistics_Data = () => {
+  const { newsData } = useToggleState();
 
     const [res_data, setRes_data] = useState<ViewerData | null>(null);
 
@@ -74,10 +76,10 @@ export const Realtime_Statistics_Data = () => {
             />
           )}
 
-          {res_data && res_data.todayViews && (
+          {newsData && newsData.length && (
             <Statistics_Box
               logo={"BsPostcard"}
-              number={res_data.todayViews}
+              number={newsData.length}
               title={"Total post"}
             />
           )}
