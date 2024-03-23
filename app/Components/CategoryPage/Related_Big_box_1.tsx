@@ -17,7 +17,7 @@ export const Related_Big_box_1 = ({ data }: { data: news }) => {
   return (
     <Link  href={`/${data.category}/${data._id}`} className='flex flex-col w-full lg:mb-10 bg-blue-00 lg:items-center lg:justify-center h-fit group'>
         <div className=' w-full bg-red-00 flex items-center justify-center bg-green-00 md:px-5'>
-            <div className="relative w-full lg:h-72 aspect-video   rounded-xl bg-cover overflow-hidden">
+            <div className="relative w-full lg:h-60 aspect-video   rounded-xl bg-cover overflow-hidden">
                 {data.urlToImage && (
                   <Image
                     src={data.urlToImage}
